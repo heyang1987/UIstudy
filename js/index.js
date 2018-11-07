@@ -55,7 +55,7 @@ $(document).ready(function(){
         if (consent_check == 1) {
             consent.style.display = 'none';
             introduction.style.display = 'block';
-            showDivs(1);
+            showDivs(12);
         } else {
             $("#consent_Q").css("border-left", "3px solid #ff0000");
         }

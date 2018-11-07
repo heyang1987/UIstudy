@@ -74,16 +74,39 @@ samp {
 .settings {
     border-width:0px;
     position:absolute;
-    left:30px;
+    left:29px;
     top:171px;
-    width:321px;
+    width:323px;
     height:520px;
     padding: 10px;
+    background-image: url("./images/back.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
     background-color:#FFFFFF;
     -moz-box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
     -webkit-box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
     box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
-    overflow:auto;
+    overflow-y:auto;
+}
+
+.settingsWithScroll {
+    border-width:0px;
+    position:absolute;
+    left:30px;
+    top:171px;
+    width:321px;
+    height:500px;
+    padding: 10px;
+    background-image: url("./images/back.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color:#FFFFFF;
+    -moz-box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
+    -webkit-box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
+    box-shadow:0px 4px 3px rgba(0, 0, 0, 0.349019607843137);
+    overflow-y : scroll;
 }
 
 .dsmbox {
@@ -136,20 +159,41 @@ samp {
     font-size:18px;
 }
 
+.profile {
+    border-style:solid;
+    border-width:1px;
+    position:absolute;
+    left:1px;
+    width:339px;
+    text-align:left;
+}
+
+.description {
+    border-width:0px;
+    position:relative;
+    left:0px;
+    top:0px;
+    width:302px;
+    padding-bottom:20px;
+    font-size:12px;
+    line-height:15px;
+}
+
 .devicecontainer {
     border-width:0px;
     position:relative;
-    left:-10px;
+    left:0px;
     top:0px;
-    width:340px;
-    height:auto;
+    width:302px;
+    height:360px;
     background-color:#FFFFFF;
 }
 
 .dev {
     border-top: 2px solid grey;
+    height:30px;
     background-color:lightblue;
-    font-size:15px;
+    font-size:18px;
 }
 
 .dropdown {
@@ -163,6 +207,10 @@ samp {
     padding-right: 10px;
     background-color:#FFFFFF;
     font-size:12px;
+}
+
+input[type="checkbox"] {
+    background-color: transparent;
 }
 
 table {

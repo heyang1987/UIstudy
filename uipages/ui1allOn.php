@@ -8,11 +8,11 @@
     <script type="text/javascript" src="../js/ui.js"></script>
     
 </head>
-<body>
+<body style="background-image:url('../images/iot2.jpg');background-size: 100%;background-size: cover;">
     <div class="container">
         <img src="../images/u1.png" width="400">
 
-        <div id="introui" style="display: none">
+        <div id="introui">
             <div class="title">
                 <p style="text-align: center;">Privacy Settings</p>
             </div>
@@ -22,12 +22,12 @@
                 <span style="font-size:24px;text-align: center;">What do you want to adjust?</span>
 
                 <!-- Device/Sensor Management -->
-                <div class="dsmbox" onclick=document.getElementById('introui').style.display='none';document.getElementById('dsmui').style.display='block';>
+                <div class="dsmbox" onclick=document.getElementById('introui').style.display='none';document.getElementById('dsmui').style.display='block';currentMenu='se'>
                     <p style="font-size:21px;"><strong>Device / Sensor Management</strong></p>
                     Manage Device access to data collected in your home
                 </div>
                 <!-- Data Usage Management -->
-                <div class="dumbox" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';>
+                <div class="dumbox" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';currentMenu='se'>
                     <p style="font-size:22px"><strong>Data Usage</strong></p>
                     Manage long-term use of data collected in your home
                 </div>
@@ -38,8 +38,8 @@
                 <div class="title">
                     <p><span style="font-size:12px;color:#522D80;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">&lt;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="align-content: center"><strong>Device/Sensor Management</strong></span></p>
                 </div>
-                <div class="settings">
-                    <p style="font-size:12px;line-height:15px;">Expand to give access for information collected by devices. Select who gets access and for what purpose. Want to know more? Click <a>here</a></p>
+                <div class="settingsWithScroll">
+                    <div class="description">Expand to give access for information collected by devices. Select who gets access and for what purpose. Want to know more? Click <a>here</a></div>
 
                     <div class="devicecontainer">
          
@@ -885,7 +885,7 @@
                             </table>
                         </div>
                         
-                        <div><button class="right">Save</button></div>
+                        <div><button style="position: relative;top:20px;left:120px;">Done!</button></div>
 
                     </div>
 
@@ -893,7 +893,7 @@
                 
             </div>
         
-        <div id="dusgui">
+        <div id="dusgui" style="display: none">
             <div class="title">
                 <p><span style="font-size:12px;color:#522D80;" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';">&lt;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <span style="align-content: center"><strong>Data Storage & Use</strong></span></p>
@@ -903,11 +903,11 @@
                     <p style="font-size: 24px"><strong>Storage & Sharing</strong></p>
                     <p style="font-size: 14px;margin-top: -25px;">Control the extent of sharing of the information collected by different devices in your smart home.</p>
                 </div>
-                <div id="storageChkBox" style="margin-top: -5px">    
+                <div id="storageChkBox" style="margin-top: -5px">
+                    No Storage<input id="n" type="checkbox" class="checkbox right" onclick="clickn()"><hr> 
                     Local Only<input id="l" type="checkbox" class="checkbox right" onclick="clickl()"><hr>
                     Local + Remote Server<input id="r" type="checkbox" class="checkbox right" onclick="clickr()"><hr>
                     Local + Third Party Sharing<input id="t" type="checkbox" checked class="checkbox right" onclick="clickt()"><hr>
-                    No Storage<input id="n" type="checkbox" class="checkbox right" onclick="clickn()"><hr>
                 </div>
                 <div style="margin-top:-10px">
                     <p style="font-size: 24px"><strong>Data Use</strong></p>
