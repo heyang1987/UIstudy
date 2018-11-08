@@ -6,10 +6,6 @@ var image = document.getElementsByClassName("mySlides");
 var audio = document.getElementsByClassName("myAudios");
 var frontline = -1;
 
-window.onbeforeunload = function () {
-    return "Data will be lost if you leave the page, are you sure?";
-};
-
 function plusDivs(n) {
     audio[slideIndex].pause();
     showDivs(slideIndex += n);
@@ -55,7 +51,7 @@ $(document).ready(function(){
         if (consent_check == 1) {
             consent.style.display = 'none';
             introduction.style.display = 'block';
-            showDivs(12);
+            showDivs(1);
         } else {
             $("#consent_Q").css("border-left", "3px solid #ff0000");
         }
@@ -70,11 +66,38 @@ $(document).ready(function(){
         consent_check = 1;
     });
 
-    $("#introductionbutton").click(function(){
+    $("#introductionbutton").click(function() {
         audio[12].pause();
-        introduction.style.display = 'none';
-//        ui1.style.display = 'block';
-        location.href = "./uipages";
+        var rdnum = Math.floor(Math.random() * 8);
+        window.alert(rdnum);
+        switch (rdnum){
+            case(0):
+                document.location.href = './uipages/ui1AllOff.php';
+                break;
+            case(1):
+                document.location.href = './uipages/ui1AllOn.php';
+                break;
+            case(2):
+                document.location.href = './uipages/ui2AllOff.php';
+                break;
+            case(3):
+                document.location.href = './uipages/ui2AllOn.php';
+                break;
+            case(4):
+                document.location.href = './uipages/ui1OneRule.php';
+                break;
+            case(5):
+                document.location.href = './uipages/ui2OneRule.php';
+                break;
+            case(6):
+                document.location.href = './uipages/ui1Profiles.php';
+                break;
+            case(7):
+                document.location.href = './uipages/ui1AllOff.php';
+                break;
+            default:
+                window.alert("error!");
+        }
     });
 
     audio[0].onended = function() {showDivs(1);frontline = 0;};
