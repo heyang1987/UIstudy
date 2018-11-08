@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../ui.css">
     <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
     <script type="text/javascript" src="../js/ui.js"></script>
     
 </head>
-<body style="background-image:url('../images/iot2.jpg');background-size: 100%;background-size: cover;">
+<body>
     <div class="container">
         <img src="../images/u1.png" width="400">
         

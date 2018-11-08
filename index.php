@@ -118,6 +118,24 @@
             </div>
             
         </div>
+        <div id="prepage" style="background-image:url('./images/iot2.jpg');background-size: 100%;background-size: cover;">
+            <div id="surveyHeader">
+                
+                <div class="surveyTitle">
+                    Prepare to Start!
+                    <img src="./images/back2.png"></img>
+                </div>
+                <div>
+                    <p>Assume you are about to set up a household IoT environment in your home, a company designed a mobile app to assist you to setting privacy for this household IoT.
+                    You will be given the system in the next page, please go through the whole setting interface and change the settings according to your taste. </p>
+                </div>
+            </div>
+            
+            <div>
+                <button id="prepagebutton" class="button right"><strong>Continue</strong></button>
+            </div>
+            
+        </div>
     </div>
 
 </body>

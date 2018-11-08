@@ -5,9 +5,9 @@
  */
 var currentMenu;
 
-window.onbeforeunload = function () {
+/*window.onbeforeunload = function () {
     return "Data will be lost if you leave the page, are you sure?";
-};
+};*/
 
 function dropdownFunction(divId) {
     if (currentMenu == divId) {

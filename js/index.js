@@ -36,10 +36,11 @@ function repeatAudio() {
 }
 
 $(document).ready(function(){
-    $('#introduction, #consentBody').hide();
+    $('#introduction, #consentBody, #prepage').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
     var introduction = document.getElementById('introduction');
+    var prepage = document.getElementById('prepage');
 
     $("#welcomeButton").click(function(){
         welcome.style.display = 'none';
@@ -51,7 +52,7 @@ $(document).ready(function(){
         if (consent_check == 1) {
             consent.style.display = 'none';
             introduction.style.display = 'block';
-            showDivs(1);
+            showDivs(12);
         } else {
             $("#consent_Q").css("border-left", "3px solid #ff0000");
         }
@@ -68,8 +69,12 @@ $(document).ready(function(){
 
     $("#introductionbutton").click(function() {
         audio[12].pause();
+        introduction.style.display = 'none';
+        prepage.style.display = 'block';        
+    });
+    
+    $("#prepagebutton").click(function() {  
         var rdnum = Math.floor(Math.random() * 8);
-        window.alert(rdnum);
         switch (rdnum){
             case(0):
                 document.location.href = './uipages/ui1AllOff.php';
