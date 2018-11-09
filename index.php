@@ -70,6 +70,18 @@
             <button id="consentbutton" class="button right">Next</button>
         </div>
         
+        <div id="preIntro">
+            <div>
+                <span><h1><strong>Introduction</strong></h1></span>
+                <hr>
+                <img src="images/iot.jpg" width="800px">
+                <p>In the next page, you will be given some explanation about household IoT. The contents will be shown in the form of figures and <strong>audios</strong>. These information are very important to the following study on a system evaluation. Please turn up your volume and pay close attention to the content. Thank you!</p>
+            </div>
+            <div class="bottomrow">
+                <button id="preIntroButton" class="button right"><strong>Continue</strong></button>
+            </div>
+        </div>
+        
         <div id="introduction" >
             <div id="surveyHeader">
                 <div class="surveyTitle">
@@ -118,19 +130,13 @@
             </div>
             
         </div>
-        <div id="prepage" style="background-image:url('./images/iot2.jpg');background-size: 100%;background-size: cover;">
-            <div id="surveyHeader">
-                
-                <div class="surveyTitle">
-                    Prepare to Start!
-                    <img src="./images/back2.png"></img>
-                </div>
-                <div>
-                    <p>Assume you are about to set up a household IoT environment in your home, a company designed a mobile app to assist you to setting privacy for this household IoT.
-                    You will be given the system in the next page, please go through the whole setting interface and change the settings according to your taste. </p>
-                </div>
+        <div id="prepage">
+            <div>
+                <span><h1><strong>Prepare to Start!</strong></h1></span>
+                <hr>
+                <img src="./images/back2.png" width="800px">
+                <p>Assume you are about to set up a household IoT environment in your home, a company designed a mobile app to assist you to setting privacy for this household IoT. You will be given the system in the next page, please go through the whole setting interface and change the settings according to your taste. </p>
             </div>
-            
             <div>
                 <button id="prepagebutton" class="button right"><strong>Continue</strong></button>
             </div>

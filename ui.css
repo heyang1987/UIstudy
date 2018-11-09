@@ -107,6 +107,10 @@ body {
     color:#FFFFFF;
 }
 
+.dsmbox:hover,.dumbox:hover {
+    background-color: #a12311;
+}
+
 .storage {
     border-width:0px;
     position:absolute;

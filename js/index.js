@@ -36,9 +36,10 @@ function repeatAudio() {
 }
 
 $(document).ready(function(){
-    $('#introduction, #consentBody, #prepage').hide();
+    $('#introduction, #consentBody, #preIntro, #prepage').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
+    var preIntro = document.getElementById('preIntro');
     var introduction = document.getElementById('introduction');
     var prepage = document.getElementById('prepage');
 
@@ -51,11 +52,16 @@ $(document).ready(function(){
         console.log(consent_check);
         if (consent_check == 1) {
             consent.style.display = 'none';
-            introduction.style.display = 'block';
-            showDivs(12);
+            preIntro.style.display = 'block';
         } else {
             $("#consent_Q").css("border-left", "3px solid #ff0000");
         }
+    });
+    
+    $("#preIntroButton").click(function() {
+        preIntro.style.display = 'none';
+        introduction.style.display = 'block'; 
+        showDivs(12);
     });
 
     $('input[type=checkbox][name=consent_test]').change(function() {
