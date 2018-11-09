@@ -44,7 +44,7 @@
                     <div class="devicecontainer">
          
                         <div class="dev" onclick="dropdownFunction('se')">    
-                            &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
+                            &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="arrowdown"/>
                         </div>
                         <div id="se" class="dropdown" style="display: block">
                             <table class="table" id="microphoneData">
@@ -115,7 +115,7 @@
                         </div>
                                                 
                    
-                        <div class="dev" onclick="dropdownFunction('re')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('re')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="re" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -185,7 +185,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('hv')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('hv')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="hv" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -255,7 +255,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('wa')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('wa')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="wa" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -325,7 +325,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('li')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('li')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="li" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -395,7 +395,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('as')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('as')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="as" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -465,7 +465,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('tv')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('tv')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="tv" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -535,7 +535,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('al')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('al')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="al" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -605,7 +605,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('lo')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('lo')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="lo" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -675,7 +675,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('ca')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('ca')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="ca" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -745,7 +745,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" onclick="dropdownFunction('mp')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" onclick="dropdownFunction('mp')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="mp" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -815,7 +815,7 @@
                             </table>
                         </div>
                         
-                        <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('sw')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                        <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('sw')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="arrowdown"/></div>
                         
                         <div id="sw" class="dropdown" style="display: none">
                             <table class="table" id="microphoneData">
@@ -904,10 +904,22 @@
                     <p style="font-size: 14px;margin-top: -25px;">Control the extent of sharing of the information collected by different devices in your smart home.</p>
                 </div>
                 <div id="storageChkBox" style="margin-top: -5px">
-                    No Storage<input id="n" type="checkbox" class="checkbox right" onclick="clickn()"><hr> 
-                    Local Only<input id="l" type="checkbox" class="checkbox right" onclick="clickl()"><hr>
-                    Local + Remote Server<input id="r" type="checkbox" class="checkbox right" onclick="clickr()"><hr>
-                    Local + Third Party Sharing<input id="t" type="checkbox" checked class="checkbox right" onclick="clickt()"><hr>
+					<div class="inputGroup">
+						<input id="radio1" name="radio" type="radio"/>
+						<label for="radio1">No Storage</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio2" name="radio" type="radio"/>
+						<label for="radio2">Local Only</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio3" name="radio" type="radio"/>
+						<label for="radio3">Local + Remote Server</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio4" name="radio" type="radio" checked/>
+						<label for="radio4">Local + Third Party Sharing</label>
+					</div><hr>
                 </div>
                 <div style="margin-top:-10px">
                     <p style="font-size: 24px"><strong>Data Use</strong></p>

@@ -35,10 +35,23 @@ function repeatAudio() {
     audio[slideIndex].currentTime = 0;
 }
 
+function handleChange(checkbox) {
+    if(checkbox.checked == true){
+        document.getElementById("consentbutton").removeAttribute("disabled");
+        $("#consent_Q").css("border-left", "3px solid #006400");
+        $('#clickable').css({'width':'0px','height':'0px','z-index':'-1'});
+    }else{
+        $("#consent_Q").css("border-left", "3px solid #ff0000");
+        document.getElementById("consentbutton").setAttribute("disabled", "disabled");
+        $('#clickable').css({'width':'80px','height':'35px','z-index':'2'});
+    }
+}
+
 $(document).ready(function(){
     $('#introduction, #consentBody, #preIntro, #prepage').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
+    var consentbutton = document.getElementById('consentbutton');
     var preIntro = document.getElementById('preIntro');
     var introduction = document.getElementById('introduction');
     var prepage = document.getElementById('prepage');
@@ -49,28 +62,18 @@ $(document).ready(function(){
     });
 
     $('#consentbutton').click(function() {
-        console.log(consent_check);
-        if (consent_check == 1) {
-            consent.style.display = 'none';
-            preIntro.style.display = 'block';
-        } else {
-            $("#consent_Q").css("border-left", "3px solid #ff0000");
-        }
+        consent.style.display = 'none';
+        preIntro.style.display = 'block';
+    });
+    
+    $("#clickable").click(function() {
+        $("#consent_Q").css("border-left", "3px solid #ff0000");
     });
     
     $("#preIntroButton").click(function() {
         preIntro.style.display = 'none';
         introduction.style.display = 'block'; 
         showDivs(12);
-    });
-
-    $('input[type=checkbox][name=consent_test]').change(function() {
-        $(".consent-next").children("button").css({
-            "cursor": "pointer",
-            "opacity": "1",
-            "background-color": "#5cb85c"
-        });
-        consent_check = 1;
     });
 
     $("#introductionbutton").click(function() {

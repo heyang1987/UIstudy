@@ -110,7 +110,7 @@
                 <div class="devicecontainer">
      
                     <div class="dev" onclick="dropdownFunction('seTP')">    
-                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
+                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="arrowdown"/>
                     </div>
                     <div id="seTP" class="dropdown" style="display: block">
                         <table class="table" id="microphoneData">
@@ -181,7 +181,7 @@
                     </div>
                                             
                
-                    <div class="dev" onclick="dropdownFunction('reTP')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('reTP')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="reTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -251,7 +251,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('hvTP')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('hvTP')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="hvTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -321,7 +321,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('waTP')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('waTP')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="waTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -391,7 +391,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('liTP')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('liTP')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="liTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -461,7 +461,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('asTP')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('asTP')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="asTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -531,7 +531,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('tvTP')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('tvTP')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="tvTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -601,7 +601,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('alTP')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('alTP')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="alTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -671,7 +671,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('loTP')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('loTP')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="loTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -741,7 +741,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('caTP')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('caTP')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="caTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -811,7 +811,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('mpTP')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('mpTP')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="mpTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -881,7 +881,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swTP')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swTP')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="swTP" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -967,7 +967,7 @@
                 <div class="devicecontainer">
      
                     <div class="dev" onclick="dropdownFunction('seRS')">    
-                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
+                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="arrowdown"/>
                     </div>
                     <div id="seRS" class="dropdown" style="display: block">
                         <table class="table" id="microphoneData">
@@ -1038,7 +1038,7 @@
                     </div>
                                             
                
-                    <div class="dev" onclick="dropdownFunction('reRS')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('reRS')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="reRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1108,7 +1108,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('hvRS')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('hvRS')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="hvRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1178,7 +1178,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('waRS')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('waRS')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="waRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1248,7 +1248,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('liRS')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('liRS')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="liRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1318,7 +1318,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('asRS')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('asRS')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="asRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1388,7 +1388,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('tvRS')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('tvRS')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="tvRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1458,7 +1458,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('alRS')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('alRS')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="alRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1528,7 +1528,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('loRS')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('loRS')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="loRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1598,7 +1598,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('caRS')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('caRS')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="caRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1668,7 +1668,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('mpRS')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('mpRS')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="mpRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1738,7 +1738,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swRS')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swRS')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="swRS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1824,7 +1824,7 @@
                 <div class="devicecontainer">
      
                     <div class="dev" onclick="dropdownFunction('seLS')">    
-                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
+                        &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="arrowdown"/>
                     </div>
                     <div id="seLS" class="dropdown" style="display: block">
                         <table class="table" id="microphoneData">
@@ -1895,7 +1895,7 @@
                     </div>
                                             
                
-                    <div class="dev" onclick="dropdownFunction('reLS')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('reLS')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="reLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -1965,7 +1965,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('hvLS')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('hvLS')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="hvLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2035,7 +2035,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('waLS')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('waLS')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="waLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2105,7 +2105,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('liLS')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('liLS')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="liLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2175,7 +2175,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('asLS')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('asLS')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="asLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2245,7 +2245,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('tvLS')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('tvLS')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="tvLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2315,7 +2315,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('alLS')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('alLS')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="alLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2385,7 +2385,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('loLS')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('loLS')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="loLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2455,7 +2455,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('caLS')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('caLS')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="caLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2525,7 +2525,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" onclick="dropdownFunction('mpLS')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" onclick="dropdownFunction('mpLS')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="mpLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">
@@ -2595,7 +2595,7 @@
                         </table>
                     </div>
                     
-                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swLS')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+                    <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('swLS')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="arrowdown"/></div>
                     
                     <div id="swLS" class="dropdown" style="display: none">
                         <table class="table" id="microphoneData">

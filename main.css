@@ -34,8 +34,27 @@ b, strong {
     font-weight: 600;
 }
 
-samp {
-    display: none;
+.consentbox {
+    padding: 5px;
+    background-color: white;
+}
+.consentbox:hover {
+    border: 1px #F0F0F0;
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+#clickable{
+    position:absolute;
+    left:710px;
+    top:10px;
+    width:100px;
+    height:55px;
+    z-index:2;
+}
+
+#consent_Q{
+    border-left: 3px solid transparent;
 }
 
 .parent_container
