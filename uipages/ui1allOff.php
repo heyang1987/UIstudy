@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="../ui.css">
     <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
     <script type="text/javascript" src="../js/ui.js"></script>
@@ -906,7 +905,7 @@
                 </div>
                 <div id="storageChkBox" style="margin-top: -5px">
 					<div class="inputGroup">
-						<input id="radio1" name="radio" type="radio"/>
+						<input id="radio1" name="radio" type="radio" checked/>
 						<label for="radio1">No Storage</label>
 					</div><hr>
 					<div class="inputGroup">

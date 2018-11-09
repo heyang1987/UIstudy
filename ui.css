@@ -95,20 +95,6 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-
-
-code {
-  background-color: #9AA3AC;
-  padding: 0 8px;
-}
-
-
 body {
     background: #fff;
     background-image:url('./images/background.jpg');
