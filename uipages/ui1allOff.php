@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="../ui.css">
     <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
     <script type="text/javascript" src="../js/ui.js"></script>
@@ -35,863 +36,863 @@
         </div>
         
         <div id="dsmui" style="display: none">
-                <div class="title">
-                    <p><span style="font-size:12px;color:#522D80;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">&lt;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="align-content: center"><strong>Device/Sensor Management</strong></span></p>
-                </div>
-                <div class="settingsWithScroll">
-                    <div class="description">Expand to give access for information collected by devices. Select who gets access and for what purpose. Want to know more? Click <a>here</a></div>
+			<div class="title">
+				<p><span style="font-size:12px;color:#522D80;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">&lt;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="align-content: center">Device/Sensor Management</span></p>
+			</div>
+			<div class="settingsWithScroll">
+				<div class="description">Expand to give access for information collected by devices. Select who gets access and for what purpose. Want to know more? Click <a>here</a></div>
 
-                    <div class="devicecontainer">
-         
-                        <div class="dev" onclick="dropdownFunction('se')">    
-                            &nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
-                        </div>
-                        <div id="se" class="dropdown" style="display: block">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                                                
-                   
-                        <div class="dev" onclick="dropdownFunction('re')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="re" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('hv')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="hv" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('wa')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="wa" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('li')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="li" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('as')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="as" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('tv')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="tv" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('al')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="al" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('lo')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="lo" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('ca')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="ca" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" onclick="dropdownFunction('mp')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="mp" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('sw')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
-                        
-                        <div id="sw" class="dropdown" style="display: none">
-                            <table class="table" id="microphoneData">
-                                <tr>
-                                    <th></th>
-                                    <th>Pres</th>
-                                    <th>Loc</th>
-                                    <th>Opt</th>
-                                    <th>Alm</th>
-                                </tr>
-                                <tr>
-                                    <td>Home Security System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigerator</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>HVAC System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Washing Machine</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Lighting System</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Smart Assistant</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>  
-                                <tr>
-                                    <td>Smart TV</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Alarm Clock</td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                    <td><input type="checkbox" /></td>
-                                </tr>                            
-                            </table>
-                        </div>
-                        
-                        <div><button style="position: relative;top:20px;left:120px;">Done!</button></div>
+				<div class="devicecontainer">
+	 
+					<div class="dev" onclick="dropdownFunction('se')">    
+						&nbsp;&nbsp;Home Security System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/>
+					</div>
+					<div id="se" class="dropdown" style="display: block">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+											
+			   
+					<div class="dev" onclick="dropdownFunction('re')">&nbsp;&nbsp;Refrigerator<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="re" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('hv')">&nbsp;&nbsp;HVAC<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="hv" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('wa')">&nbsp;&nbsp;Washing Machine<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="wa" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('li')">&nbsp;&nbsp;Lighting System<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="li" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('as')">&nbsp;&nbsp;Smart Assistant<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="as" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('tv')">&nbsp;&nbsp;Smart TV<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="tv" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('al')">&nbsp;&nbsp;Alarm<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="al" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('lo')">&nbsp;&nbsp;Location Sensor<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="lo" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('ca')">&nbsp;&nbsp;Camera<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="ca" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" onclick="dropdownFunction('mp')">&nbsp;&nbsp;Microphone<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="mp" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div class="dev" style="border-bottom: 1px solid grey" onclick="dropdownFunction('sw')">&nbsp;&nbsp;Smart Phone/Watch<img src="images/arrow-down.png" class="right" style="padding-top: 5px;padding-right: 15px"/></div>
+					
+					<div id="sw" class="dropdown" style="display: none">
+						<table class="table" id="microphoneData">
+							<tr>
+								<th></th>
+								<th>Pres</th>
+								<th>Loc</th>
+								<th>Opt</th>
+								<th>Alm</th>
+							</tr>
+							<tr>
+								<td>Home Security System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>HVAC System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Washing Machine</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Lighting System</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Smart Assistant</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>  
+							<tr>
+								<td>Smart TV</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td>Alarm Clock</td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+								<td><input type="checkbox" /></td>
+							</tr>                            
+						</table>
+					</div>
+					
+					<div><button style="position: relative;top:20px;left:120px;">Done!</button></div>
 
-                    </div>
+				</div>
 
-                </div>
-                
-            </div>
+			</div>
+			
+		</div>
         
         <div id="dusgui" style="display: none">
             <div class="title">
@@ -904,20 +905,40 @@
                     <p style="font-size: 14px;margin-top: -25px;">Control the extent of sharing of the information collected by different devices in your smart home.</p>
                 </div>
                 <div id="storageChkBox" style="margin-top: -5px">
-                    <div>No Storage<input id="n" type="checkbox" checked class="checkbox right" onclick="clickn()"><hr></div>
-                    <div>Local Only<input id="l" type="checkbox" class="checkbox right" onclick="clickl()"><hr></div>
-                    <div>Local + Remote Server<input id="r" type="checkbox" class="checkbox right" onclick="clickr()"><hr></div>
-                    <div>Local + Third Party Sharing<input id="t" type="checkbox" class="checkbox right" onclick="clickt()"><hr></div>
+					<div class="inputGroup">
+						<input id="radio1" name="radio" type="radio"/>
+						<label for="radio1">No Storage</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio2" name="radio" type="radio"/>
+						<label for="radio2">Local Only</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio3" name="radio" type="radio"/>
+						<label for="radio3">Local + Remote Server</label>
+					</div><hr>
+					<div class="inputGroup">
+						<input id="radio4" name="radio" type="radio"/>
+						<label for="radio4">Local + Third Party Sharing</label>
+					</div><hr>
                 </div>
                 <div style="margin-top:-10px">
                     <p style="font-size: 24px"><strong>Data Use</strong></p>
                     <p style="font-size: 14px;margin-top: -25px;">Manage what happens with the shared information</p>
                 </div>
-                <div style="margin-top: -5px">    
-                    Optimize Services<label class="switch"><input type="checkbox"><span class="slider round"></span></label><hr>
-                    Behavioral Insights<label class="switch"><input type="checkbox"><span class="slider round"></span></label><hr>
-                    Recommendation<label class="switch"><input type="checkbox"><span class="slider round"></span></label><hr>
-                    Other users<label class="switch"><input type="checkbox"><span class="slider round"></span></label><hr>
+                <div style="margin-top: 5px">
+					<div style="margin-top:15px">
+						<span>&nbsp;&nbsp;Optimize Services<label class="switch"><input type="checkbox"><span class="slider round"></span></label></span>
+					</div><hr>
+					<div style="margin-top:15px">
+						&nbsp;&nbsp;Behavioral Insights<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+					</div><hr>
+                    <div style="margin-top:15px">
+						&nbsp;&nbsp;Recommendation<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+					</div><hr>
+                    <div style="margin-top:15px">
+						&nbsp;&nbsp;Other users<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+					</div><hr>
                 </div>
             </div>
         </div>
