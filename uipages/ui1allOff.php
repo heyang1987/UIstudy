@@ -64,10 +64,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-                                <th><div class="tooltip"><img src="../icons/9.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/9.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/9.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/9.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
