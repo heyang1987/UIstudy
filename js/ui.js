@@ -17,29 +17,9 @@ function dropdownFunction(divId) {
         document.getElementById(currentMenu).style.display = 'none';
         document.getElementById(divId).style.display = 'block';
         currentMenu = divId;
-    }  
+    }
 }
 
-function clickl() {
-    document.getElementById("r").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickr() {
-    document.getElementById("l").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickt() {
-    document.getElementById("l").checked = false;
-    document.getElementById("r").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickn() {
-    document.getElementById("l").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("r").checked = false;
-}
+document.addEventListener('click', function(e) {
+    //alert( e.target.id );
+}, false);

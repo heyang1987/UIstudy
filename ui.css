@@ -183,12 +183,40 @@ input.largerCheckbox
 {
 	width: 30px;
 	height: 30px;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 
 input.largerCheckbox:checked:after
 {
     background-color: grey;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #696969;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    top: 100%;
+    left: 40%; 
+    margin-left: -120px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 .storage {
@@ -272,8 +300,8 @@ table {
 } */
 
 tr {
-    border-bottom: 1px solid black;
-    border-top: none;
+/*    border-bottom: 1px solid black;*/
+    border: none;
     border-collapse: collapse;
 }
 
