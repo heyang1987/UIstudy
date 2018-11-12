@@ -50,14 +50,14 @@
 
                 <div class="devicecontainer">
                     <div class="narrowmenu" onclick="dropdownFunction('se')">
-                        <div class="narrowmenuicon"><img src="../icon/en8.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenuicon"><img src="../icons/1.png" style="width:25px;height:25px;float:left"></div>
                         <div class="narrowmenutext">
                             Home Security System
                             <img src="images/righarrow.png" style="height:18px;float:right;">
                         </div>
                     </div>
                     <div id="se" class="dropdown" style="display: none">
-                        <table class="table" id="microphoneData" cellspacing="20">
+                        <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
                                 <th>prs</th>
@@ -66,56 +66,56 @@
                                 <th>Alm</th>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en8.png" style="width:16px;height:25px;"></td>
+                                <td>Home Security System</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en3.png" style="width:20px;height:25px;"></td>
+                                <td>Refrigerator</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en4.png" style="width:12px;height:25px;"></td>
+                                <td>HVAC System</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en7.png" style="width:20px;height:25px;"></td>
+                                <td>Washing Machine</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en5.png" style="width:25px;height:25px;"></td>
+                                <td>Lighting System</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en10.png" style="width:30px;height:25px;"></td>
+                                <td>Smart Assistant</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en6.png" style="width:30px;height:25px;"></td>
+                                <td>Smart TV</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                             </tr>
                             <tr>
-                                <td><img src="../icon/en9.png" style="width:25px;height:25px;"></td>
+                                <td>Alm Clock</td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
@@ -126,7 +126,7 @@
 
 
                     <div class="narrowmenu" onclick="dropdownFunction('re')">
-                        <div class="narrowmenuicon"><img src="../icon/en3.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenuicon"><img src="../icons/2.png" style="width:25px;height:25px;float:left"></div>
                         <div class="narrowmenutext">
                             Refrigerator
                             <img src="images/righarrow.png" style="height:18px;float:right;">
@@ -202,7 +202,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('hv')">
-                        <div class="narrowmenuicon"><img src="../icon/en4.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/3.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">
                             HVAC
                             <img src="images/righarrow.png" style="height:18px;float:right;">
@@ -278,7 +278,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('wa')">
-                        <div class="narrowmenuicon"><img src="../icon/en7.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenuicon"><img src="../icons/4.png" style="width:25px;height:25px;float:left"></div>
                         <div class="narrowmenutext">
                             Washing Machine
                             <img src="images/righarrow.png" style="height:18px;float:right;">
@@ -353,7 +353,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('li')">
-                        <div class="narrowmenuicon"><img src="../icon/en5.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/5.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Lighting System<img src="images/righarrow.png" style="height:18px;float:right;"></div>
                     </div>
 
@@ -426,7 +426,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('as')">
-                        <div class="narrowmenuicon"><img src="../icon/en10.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/6.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Smart Assistant<img src="images/righarrow.png" style="height:18px;float:right;"></div>
                     </div>
 
@@ -499,7 +499,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('tv')">
-                        <div class="narrowmenuicon"><img src="../icon/en6.png" style="width:26px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/7.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Smart TV<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="tv" class="dropdown" style="display: none">
@@ -571,7 +571,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('al')">
-                        <div class="narrowmenuicon"><img src="../icon/en9.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/8.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Alarm<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="al" class="dropdown" style="display: none">
@@ -642,8 +642,8 @@
                         </table>
                     </div>
 
-                    <div class="narrowmenu" onclick="dropdownFunction('lo')">
-                        <div class="narrowmenuicon"><img src="../icon/en4.png" style="width:25px;height:25px;float:left;"></div>
+                    <div class="narrowmenu" onclick="dropdownFunction('lo')" style="margin-top:20px;">
+                        <div class="narrowmenuicon"><img src="../icons/9.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Location Sensor<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="lo" class="dropdown" style="display: none">
@@ -715,7 +715,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('ca')">
-                        <div class="narrowmenuicon"><img src="../icon/en11.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/10.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Camera<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="ca" class="dropdown" style="display: none">
@@ -787,7 +787,7 @@
                     </div>
 
                     <div class="narrowmenu" onclick="dropdownFunction('mp')">
-                        <div class="narrowmenuicon"><img src="../icon/en14.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/11.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Microphone<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="mp" class="dropdown" style="display: none">
@@ -859,7 +859,7 @@
                     </div>
 
                     <div class="narrowmenu" style="border-bottom: 1px solid grey" onclick="dropdownFunction('sw')">
-                        <div class="narrowmenuicon"><img src="../icon/en4.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenuicon"><img src="../icons/12.png" style="width:25px;height:25px;float:left;"></div>
                         <div class="narrowmenutext">Smart Phone/Watch<img src="images/righarrow.png" style="height:18px;float:right;"></div></div>
 
                     <div id="sw" class="dropdown" style="display: none">
@@ -930,7 +930,7 @@
                         </table>
                     </div>
 
-                    <div><button class="button middle" style="top:20px;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
+                    <div><button class="button middle" style="top:10px;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
                 </div>
 
 			</div>
