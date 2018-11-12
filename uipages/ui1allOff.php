@@ -57,18 +57,17 @@
                         </div>
                     </div>
                     <div id="se" class="dropdown" style="display: none">
-                        <div style="font-size:16px;padding-top:10px;padding-bottom:10px;">Data from this device can be used by</div>
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-                                <th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
-                                <td>data on the device itself</td>
-                                <td><input type="checkbox" class="largerCheckbox" id="seprs"/></td>
+                                <td>Home Security System</td>
+                                <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
@@ -138,10 +137,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-                                <th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -214,10 +213,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -289,10 +288,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -362,10 +361,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -435,10 +434,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -466,7 +465,7 @@
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
                                 <td><input type="checkbox" class="largerCheckbox"/></td>
-								<td><input type="checkbox" class="largerCheckbox"/></td>
+
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
@@ -507,10 +506,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -579,10 +578,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -651,10 +650,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -723,10 +722,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -795,10 +794,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -867,10 +866,10 @@
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th>prs</th>
+                                <th>Loc</th>
+                                <th>Opt</th>
+                                <th>Alarm</th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
