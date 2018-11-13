@@ -200,6 +200,7 @@ input.largerCheckbox
 	width: 30px;
 	height: 30px;
     border-radius: 25%;
+    margin-left: 5px;
 }
 
 input.largerCheckbox:checked:after
@@ -210,13 +211,13 @@ input.largerCheckbox:checked:after
 .tooltip {
     position: relative;
     display: inline-block;
-/*    border-bottom: 1px dotted black;*/
+    border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #696969;
+    background-color: rgba(105,105,105,0.9);
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -228,7 +229,7 @@ input.largerCheckbox:checked:after
     width: 100px;
     top: 100%;
     left: 40%; 
-    margin-left: -120px;
+    margin-left: -80px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -301,10 +302,14 @@ input.largerCheckbox:checked:after
     top:0px;
     width:auto;
     height:auto;
-    padding-left: 30px;
+    padding-left: 16px;
 /*    padding-right: 10px;*/
     background-color:#eff0f5;
     font-size:12px;
+}
+
+.se1 {
+    ;
 }
 
 table {

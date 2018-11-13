@@ -20,26 +20,20 @@ function dropdownFunction(divId) {
     }  
 }
 
-function clickl() {
-    document.getElementById("r").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickr() {
-    document.getElementById("l").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickt() {
-    document.getElementById("l").checked = false;
-    document.getElementById("r").checked = false;
-    document.getElementById("n").checked = false;
-}
-
-function clickn() {
-    document.getElementById("l").checked = false;
-    document.getElementById("t").checked = false;
-    document.getElementById("r").checked = false;
-}
+function checkAll(ele, classId) {
+     var checkboxes = document.getElementsByClassName(classId);
+     if (ele.checked) {
+         for (var i = 0; i < checkboxes.length; i++) {
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = true;
+             }
+         }
+     } else {
+         for (var i = 0; i < checkboxes.length; i++) {
+             console.log(i)
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = false;
+             }
+         }
+     }
+ }

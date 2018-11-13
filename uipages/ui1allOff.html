@@ -61,69 +61,78 @@
                     </div>
                     <div id="se" class="dropdown" style="display: none">
 						<div style="padding:10px 0px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="microphoneData">
+                        <table class="table" id="sedata">
                             <tr>
                                 <th></th>
                                 <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
                                 <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
                                 <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
                                 <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip">All<span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" class="largerCheckbox" id="seprs"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sese" id="seprs"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sese"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sese"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sese"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, 'sese')"/></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox serfg"/></td>
+                                <td><input type="checkbox" class="largerCheckbox serfg"/></td>
+                                <td><input type="checkbox" class="largerCheckbox serfg"/></td>
+                                <td><input type="checkbox" class="largerCheckbox serfg"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, ' serfg')"/></td>
                             </tr>
                             <tr>
                                 <td>HVAC System</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sehv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sehv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sehv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sehv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sehv" onchange="checkAll(this, 'sehv')"/></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sewm"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sewm"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sewm"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sewm"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sewm" onchange="checkAll(this, 'sewm')"/></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sels"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sels"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sels"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sels"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, 'sels')"/></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sesa"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sesa"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sesa"/></td>
+                                <td><input type="checkbox" class="largerCheckbox sesa"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, 'sesa')"/></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td><input type="checkbox" class="largerCheckbox setv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox setv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox setv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox setv"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, 'setv')"/></td>
                             </tr>
                             <tr>
-                                <td>Alm Clock</td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
-                                <td><input type="checkbox" class="largerCheckbox"/></td>
+                                <td>Alarm Clock</td>
+                                <td><input type="checkbox" class="largerCheckbox secl"/></td>
+                                <td><input type="checkbox" class="largerCheckbox secl"/></td>
+                                <td><input type="checkbox" class="largerCheckbox secl"/></td>
+                                <td><input type="checkbox" class="largerCheckbox secl"/></td>
+                                <td><input type="checkbox" class="largerCheckbox" onchange="checkAll(this, 'secl')"/></td>
                             </tr>
                         </table>
                     </div>
@@ -138,13 +147,14 @@
                     </div>
 
                     <div id="re" class="dropdown" style="display: none">
+						<div style="padding:10px 0px;font-weight:bold">Data from this device can be used by</div>
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-                                <th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -214,13 +224,14 @@
                     </div>
 
                     <div id="hv" class="dropdown" style="display: none">
+						<div style="padding:10px 0px;font-weight:bold">Data from this device can be used by</div>
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
@@ -289,13 +300,14 @@
                         </div></div>
 
                     <div id="wa" class="dropdown" style="display: none">
+						<div style="padding:10px 0px;font-weight:bold">Data from this device can be used by</div>
                         <table class="table" id="microphoneData">
                             <tr>
                                 <th></th>
-								<th><div class="tooltip">prs<span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip">Loc<span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip">Opt<span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip">Alm<span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
