@@ -131,3 +131,41 @@ b, strong {
 .w3-display-right{position:relative; top:280px; left: 746px; transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
 .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
 .w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #193384;
+}
+
+.floatright {
+    display: inline-block;
+}
+
+.child {
+/*        width: calc(100% / 7);*/
+    width: 90px;
+}
+
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

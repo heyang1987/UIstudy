@@ -1096,7 +1096,7 @@
             </div>
             <div class="settings">
                 <div class="uifixtext">
-                    <h3>Storage and Sharing</h3>
+                    <h2>Storage and Sharing</h2>
                     Control the extent of sharing of the information collected by different devices in your smart home.
                 </div>
 
@@ -1118,7 +1118,7 @@
                 </div>
 
                 <div class="uifixtext">
-                    <h3>Data Usage</h3>
+                    <h2>Data Usage</h2>
                     Manage what happens with the shared information.
                 </div>
                 
