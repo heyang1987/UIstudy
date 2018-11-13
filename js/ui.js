@@ -4,25 +4,38 @@
  * and open the template in the editor.
  */
 var currentMenu;
+var currentStatus=true;
 
 /*window.onbeforeunload = function () {
     return "Data will be lost if you leave the page, are you sure?";
 };*/
 
 function dropdownFunction(divId) {
+    var curArrowId = currentMenu+'Arrow';
     if (currentMenu == divId) {
-        document.getElementById(divId).style.display = (document.getElementById(divId).style.display == 'none' ) ? 'block' : 'none';
+        if (document.getElementById(divId).style.display == 'none'){
+            document.getElementById(curArrowId).src='../images/arrowdown.png';
+            document.getElementById(divId).style.display = 'block';
+        }
+        else{
+            document.getElementById(curArrowId).src='../images/arrowright.png';
+            document.getElementById(divId).style.display = 'none';
+        }
     }
     else{
         document.getElementById(currentMenu).style.display = 'none';
         document.getElementById(divId).style.display = 'block';
+        document.getElementById(curArrowId).src='../images/arrowright.png';
+        curArrowId=divId+'Arrow';
+        document.getElementById(curArrowId).src='../images/arrowdown.png';
         currentMenu = divId;
-    }  
+    }
+
 }
 
-function checkAll(ele, classId) {
+function checkRow(eleChecked, classId) {
      var checkboxes = document.getElementsByClassName(classId);
-     if (ele.checked) {
+     if (eleChecked) {
          for (var i = 0; i < checkboxes.length; i++) {
              if (checkboxes[i].type == 'checkbox') {
                  checkboxes[i].checked = true;
@@ -36,4 +49,23 @@ function checkAll(ele, classId) {
              }
          }
      }
+ }
+
+function checkAll(dev) {
+    checkRow(currentStatus, dev+'se');
+    checkRow(currentStatus, dev+'re');
+    checkRow(currentStatus, dev+'hv');
+    checkRow(currentStatus, dev+'wm');
+    checkRow(currentStatus, dev+'ls');
+    checkRow(currentStatus, dev+'sa');
+    checkRow(currentStatus, dev+'tv');
+    checkRow(currentStatus, dev+'cl');
+    if (currentStatus) {
+        currentStatus = false;
+        document.getElementById(dev+'AllButton').innerHTML = "None";
+    }
+    else{
+        currentStatus = true;
+        document.getElementById(dev+'AllButton').innerHTML = "All";
+    }
  }

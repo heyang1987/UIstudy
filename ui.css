@@ -141,7 +141,7 @@ body {
     height:auto;
     border-top: 0.01em solid #dedede;
     background-color: white;
-    font-size: 18px;
+    font-size: 16px;
     word-wrap:break-word;
     color:#000;
     padding: 10px 10px;
@@ -178,18 +178,19 @@ body {
     color:#000;
     padding: 5px 10px;
     cursor: pointer;
+/*    border: 0.01em solid red*/
 }
 
 .narrowmenuicon {
     position: relative;
-    width: 20px;
+    float: left;
 /*    border: 0.01em solid red; */
 }
 
 .narrowmenutext {
     position: relative;
     left: 10px;
-    width: 280px;
+    width: 287px;
     margin-top: 5px;
     margin-left: 10px;
 /*    border: 0.01em solid red;*/
@@ -211,7 +212,7 @@ input.largerCheckbox:checked:after
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+/*    border-bottom: 1px dotted black;*/
 }
 
 .tooltip .tooltiptext {
@@ -227,7 +228,7 @@ input.largerCheckbox:checked:after
     position: absolute;
     z-index: 1;
     width: 100px;
-    top: 100%;
+    top: -140%;
     left: 40%; 
     margin-left: -80px;
 }
@@ -302,7 +303,7 @@ input.largerCheckbox:checked:after
     top:0px;
     width:auto;
     height:auto;
-    padding-left: 16px;
+    padding-left: 4px;
 /*    padding-right: 10px;*/
     background-color:#eff0f5;
     font-size:12px;
@@ -316,11 +317,14 @@ table {
     border-collapse: collapse;
 }
 
-/*
-th, td {
-    margin:40px;
+th {
+   text-align: center; 
 } 
-*/
+
+td {
+    text-align: right;
+    padding-right: 5px;
+} 
 
 tr {
 /*    border-bottom: 1px solid black;*/
