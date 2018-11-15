@@ -21,7 +21,7 @@
             <div class="settings">
 
 
-                
+
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dsmui').style.display='block';currentMenu='se'>
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
@@ -29,10 +29,10 @@
 <!--                    <h2>Device and Sensor Management</h2>-->
                     Manage IoT device access to the data collected by other IoT devices in your home.
                 </div>
-                
+
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';currentMenu='se'>
                     <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
-                </div>            
+                </div>
                 <div class="uifixtext" style="margin-top:10px;">
 <!--                    <h2>Data Usage</h2>-->
                     Manage long-term use of data collected in your home.
@@ -43,7 +43,7 @@
         <div id="dsmui" style="display: none">
 			<div class="title">
 <!--                <div style="float:left;margin:10px;"><img src="../icons/home.png" style="width:30px;height:30px;"></div>-->
-                <button id="homebutton" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';"></button>
+                <button class="homebutton" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();"></button>
 				<div style="float:left;margin-left:10px;margin-top:16px;">Device/Sensor Management</div>
 			</div>
 			<div class="settingsWithScroll">
@@ -76,7 +76,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sese" id="seseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sese" id="seseope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sese" id="sesealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px;background-color:grey" id="seseall" onclick="checkRow('sese',true,true)">All</button><span class="tooltiptext">Enable this row</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sese',true,true)"><div class="tooltip"><button class="allbutton" id="seseall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
@@ -84,7 +84,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sere" id="sereloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sere" id="sereope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sere" id="serealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sere" id="sereall" onchange="checkRow(this.checked, ' sere')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sere',true,true)"><div class="tooltip"><button class="allbutton" id="sereall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC System</td>
@@ -92,7 +92,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sehv" id="sehvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sehv" id="sehvope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sehv" id="sehvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sehv" id="sehvall" onchange="checkRow(this.checked, 'sehv')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sehv',true,true)"><div class="tooltip"><button class="allbutton" id="sehvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
@@ -100,7 +100,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sewm" id="sewmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sewm" id="sewmope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sewm" id="sewmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sewm" id="sewmall" onchange="checkRow(this.checked,  'sewm')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sewm',true,true)"><div class="tooltip"><button class="allbutton" id="sewmall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
@@ -108,7 +108,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sels" id="selsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sels" id="selsope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sels" id="selsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sels" id="selsall" onchange="checkRow(this.checked, 'sels')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sels',true,true)"><div class="tooltip"><button class="allbutton" id="selsall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
@@ -116,7 +116,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sesa" id="sesaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sesa" id="sesaope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sesa" id="sesaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox sesa" id="sesaall" onchange="checkRow(this.checked, 'sesa')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('sesa',true,true)"><div class="tooltip"><button class="allbutton" id="sesaall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
@@ -124,7 +124,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox setv" id="setvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox setv" id="setvope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox setv" id="setvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox setv" id="setvall" onchange="checkRow(this.checked, 'setv')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('setv',true,true)"><div class="tooltip"><button class="allbutton" id="setvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
@@ -132,7 +132,7 @@
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox secl" id="seclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox secl" id="seclope"/><span class="tooltiptext">automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" class="largerCheckbox secl" id="seclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox secl" id="seclall" onchange="checkRow(this.checked, 'secl')"/></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"  onclick="checkRow('secl',true,true)"><div class="tooltip"><button class="allbutton" id="seclall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -1091,7 +1091,7 @@
 
         <div id="dusgui" style="display: none">
             <div class="title">
-                <button id="homebutton" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';"></button>
+                <button class="homebutton" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';"></button>
                 <div style="float:left;margin-left:26px;margin-top:16px;">Data Storage and Usage</div>
             </div>
             <div class="settings">
@@ -1121,7 +1121,7 @@
                     <h2>Data Usage</h2>
                     Manage what happens with the shared information.
                 </div>
-                
+
                 <div class="radiobox">
                     Optimize Services<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
                 </div>
@@ -1134,12 +1134,12 @@
                 <div class="radiobox">
                     Other users<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
                 </div>
-                
+
                 <div><button class="button middle" style="top:28px;" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
-                
+
             </div>
         </div>
-        
+
 
 
     </div>

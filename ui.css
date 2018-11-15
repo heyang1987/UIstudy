@@ -100,7 +100,7 @@ body {
     line-height: 18px;
 }
 
-#homebutton {
+.homebutton {
     background-image: url('./icons/home.png');
     background-color: #ff9400;
     background-size: 28px 28px;
@@ -228,9 +228,9 @@ input.largerCheckbox:checked:after
     position: absolute;
     z-index: 1;
     width: 100px;
-    top: -140%;
+    top: 0%;
     left: 40%; 
-    margin-left: -80px;
+    margin-left: -110px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -364,7 +364,7 @@ tr {
 }
 
 .button:hover {
-    background-color: rgba(255,165,0,0.4);;
+    background-color: rgba(255,165,0,0.4);
 }
 
 .bottomrow {
@@ -373,6 +373,23 @@ tr {
     margin-left: 720px;
     height: 30px;
     clear: both;
+}
+
+.allbutton {
+    border: 0px solid;
+    border-radius: 10px;
+    background-color: #DCDCDC;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 1px;
+    width: 30px;
+    margin-left:5px
+}
+
+.allbutton:hover {
+    background-color: rgba(53, 52, 52, 0.8);
 }
 
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
