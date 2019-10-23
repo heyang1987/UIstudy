@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,11 @@
     <script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
-    
+	<?php
+	// Storing session data
+	$_SESSION["firstname"] = "Yang";
+	$_SESSION["lastname"] = "He";
+	?>    
     <div class="parent_container">
         <div id="welcomeBody">
             <div>
@@ -143,7 +150,8 @@
                 <p>Assume you are about to set up a household IoT environment in your home, a company designed a mobile app to assist you to setting privacy for this household IoT. You will be given the system in the next page, please go through the whole setting interface and change the settings according to your taste. </p>
             </div>
             <div>
-                <button id="prepagebutton" class="button right"><strong>Continue</strong></button>
+                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>
+<!--                <button class="button right" onclick="location.href = './uipages/ui1AllOff.php'";><strong>Start!</strong></button>-->
             </div>
             
         </div>

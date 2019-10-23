@@ -1,11 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*eslint-env browser*/
+
 var currentMenu;
-var currentStatus=true;
-var allStatus=true;
+//var currentStatus=true;
+//var allStatus=true;
 
 /*window.onbeforeunload = function () {
     return "Data will be lost if you leave the page, are you sure?";
@@ -34,22 +31,40 @@ function dropdownFunction(divId) {
 
 }
 
-function checkRow(classId, status, flag) {
-    var checkboxes = document.getElementsByClassName(classId);
+function checkCol(dev,purpose) {
+    var currentStatus = document.getElementById(dev+'cl'+purpose).checked;
+    currentStatus ? currentStatus=false : currentStatus=true;
+    document.getElementById(dev+'se'+purpose).checked = currentStatus;
+    document.getElementById(dev+'re'+purpose).checked = currentStatus;
+    document.getElementById(dev+'hv'+purpose).checked = currentStatus;
+    document.getElementById(dev+'wm'+purpose).checked = currentStatus;
+    document.getElementById(dev+'ls'+purpose).checked = currentStatus;
+    document.getElementById(dev+'sa'+purpose).checked = currentStatus;
+    document.getElementById(dev+'tv'+purpose).checked = currentStatus;
+    document.getElementById(dev+'cl'+purpose).checked = currentStatus;
+}
+
+function checkRow(dev, status, flag) {
+    var currentStatus = document.getElementById(dev+'prs').checked;
+    var checkboxes = document.getElementsByClassName(dev);
+    //alert(currentStatus);
     if (flag) {
         for (var i = 0; i < checkboxes.length; i++) {
-             checkboxes[i].checked = currentStatus;
+             checkboxes[i].checked = !currentStatus;
         }
-        currentStatus ? currentStatus=false : currentStatus=true;
+//        currentStatus ? currentStatus=false : currentStatus=true;
+    
     }
     else {
-        for (var i = 0; i < checkboxes.length; i++) {
+        for (i = 0; i < checkboxes.length; i++) {
                  checkboxes[i].checked = status;
         }
     }
  }
 
 function checkAll(dev) {
+    var allStatus = !document.getElementById(dev+'clalm').checked;
+    //alert(allStatus);
     checkRow(dev+'se', allStatus, false);
     checkRow(dev+'re', allStatus, false);
     checkRow(dev+'hv', allStatus, false);
@@ -59,11 +74,11 @@ function checkAll(dev) {
     checkRow(dev+'tv', allStatus, false);
     checkRow(dev+'cl', allStatus, false);
     if (allStatus) {
-        allStatus = false;
+//        allStatus = false;
         document.getElementById(dev+'AllButton').innerHTML = "None";
     }
     else{
-        allStatus = true;
+//        allStatus = true;
         document.getElementById(dev+'AllButton').innerHTML = "All";
     }
  }
@@ -75,3 +90,13 @@ function closeLeftDropdown() {
         document.getElementById(currentMenu).style.display = 'none';
     }
 }
+
+setTimeout(function(){
+document.getElementById('continue').style.visibility = "visible";
+},10000);
+
+$(document).ready(function(){
+    $("#uifinishedbutton").click(function() {
+        document.location.href = '../survey.php';
+    });
+});

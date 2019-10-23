@@ -22,6 +22,13 @@ body {
     margin-left: -200px;
 }
 
+.bottomright {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 18px;
+}
+
 .uifixtext {
     position: relative;
     padding-left: 10px;
@@ -484,4 +491,28 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.uiFinishButton {
+    float:right;
+    border: 1px solid black;
+    padding: 5px 10px;
+    background-position: 10px;
+    background-color: #a4c63b;
+    background-repeat: no-repeat;
+    text-align: center;
+    cursor: pointer;
+    cursor: hand
+}
+
+.uiFinishButton:hover {
+    background-color: #d4d4d4;
+}
+
+.rightDiv {
+    visibility:hidden;
+    float: right;
+    width:400px;
+    margin-right: 50px;
+    margin-top:500px
 }

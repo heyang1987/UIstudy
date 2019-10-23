@@ -1,3 +1,4 @@
+/*eslint-env browser*/
 'use strict';
 
 var consent_check = 0;
@@ -82,8 +83,9 @@ $(document).ready(function(){
         prepage.style.display = 'block';        
     });
     
-    $("#prepagebutton").click(function() {  
-        var rdnum = Math.floor(Math.random() * 8);
+    $("#prepagebutton").click(function() {
+        alert("start clicked!");
+        var rdnum = Math.floor(Math.random() * 2);
         switch (rdnum){
             case(0):
                 document.location.href = './uipages/ui1AllOff.php';
@@ -91,24 +93,24 @@ $(document).ready(function(){
             case(1):
                 document.location.href = './uipages/ui1AllOn.php';
                 break;
-            case(2):
-                document.location.href = './uipages/ui2AllOff.php';
-                break;
-            case(3):
-                document.location.href = './uipages/ui2AllOn.php';
-                break;
-            case(4):
-                document.location.href = './uipages/ui1OneRule.php';
-                break;
-            case(5):
-                document.location.href = './uipages/ui2OneRule.php';
-                break;
-            case(6):
-                document.location.href = './uipages/ui1Profiles.php';
-                break;
-            case(7):
-                document.location.href = './uipages/ui1AllOff.php';
-                break;
+//            case(2):
+//                document.location.href = './uipages/ui2AllOff.php';
+//                break;
+//            case(3):
+//                document.location.href = './uipages/ui2AllOn.php';
+//                break;
+//            case(4):
+//                document.location.href = './uipages/ui1OneRule.php';
+//                break;
+//            case(5):
+//                document.location.href = './uipages/ui2OneRule.php';
+//                break;
+//            case(6):
+//                document.location.href = './uipages/ui1Profiles.php';
+//                break;
+//            case(7):
+//                document.location.href = './uipages/ui1AllOff.php';
+//                break;
             default:
                 window.alert("error!");
         }
