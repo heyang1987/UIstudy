@@ -14,12 +14,12 @@
         
         <div id="storagesharing">
             <div class="title">
-                <div style="text-align: center;margin-top:16px;">Privacy Settings</div>
+                <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
             </div>
             
             <div class="settings">
                 <div class="uifixtext">
-                    <p style="font-size: 22px"><strong>Storage & Sharing</strong></p>
+                    <p style="font-size: 22px"><strong>Storage and Sharing</strong></p>
                     <p style="font-size: 14px;margin-top: -10px;">Control the extent of sharing of the information collected by different devices in your smart home.</p>
                 </div>
 <!--
@@ -90,31 +90,24 @@
 -->
             <div class="title">
                 <button class="homebutton" onclick="document.getElementById('introuiLS').style.display='none';document.getElementById('storagesharing').style.display='block';"></button>
-				<div style="float:left;margin-left:10px;margin-top:16px;">Local Storage Privacy Settings</div>
+				<div style="float:left;margin-left:10px;margin-top:16px;">Privacy Settings for Local Storage</div>
 			</div>
                         
             <div class="settings">
-                <div class="uifixtext" style="margin-top: 20px;">
-                    For <strong>Local Storage</strong>, manage information collection by devices or data usage
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introuiLS').style.display='none';document.getElementById('dsmuiLS').style.display='block';currentMenu='se'>
+                    <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                </div>
+                <div class="uifixtext" style="margin-top: 10px;">
+                    Manage IoT device access to the data collected by other IoT devices in your home.
                 </div>
 
-                <!-- Device/Sensor Management -->
-                <div class="menu" style="margin-top: 20px;" onclick=document.getElementById('introuiLS').style.display='none';document.getElementById('dsmuiLS').style.display='block';>
-                    <strong>Device / Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
-                </div>
-                <div class="uifixtext" style="margin-top: 10px;">
-                    Manage Device access to data collected in your home.
-                </div>
-                
-                <!-- Data Usage Management -->
-                <div class="menu" style="margin-top: 20px;" onclick=document.getElementById('introuiLS').style.display='none';document.getElementById('dusguiLS').style.display='block';>
-<!--                    <p style="font-size:22px"><strong>Data Usage</strong></p>-->
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introuiLS').style.display='none';document.getElementById('dusguiLS').style.display='block';currentMenu='se'>
                     <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
-                <div class="uifixtext" style="margin-top: 10px;">
+                <div class="uifixtext" style="margin-top:10px;">
                     Manage long-term use of data collected in your home.
                 </div>
-                
+            </div>
             </div>
         </div>
         

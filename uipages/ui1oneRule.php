@@ -14,27 +14,21 @@
 
         <div id="introui">
             <div class="title">
-<!--                <div style="float:left;margin-top:15px;margin-left:5px">Household IoT Privacy Settings</div>-->
                 <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
             </div>
 
             <div class="settings">
-
-
-                
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dsmui').style.display='block';currentMenu='se'>
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-<!--                    <h2>Device and Sensor Management</h2>-->
                     Manage IoT device access to the data collected by other IoT devices in your home.
                 </div>
-                
+
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';currentMenu='se'>
                     <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
-                </div>            
+                </div>
                 <div class="uifixtext" style="margin-top:10px;">
-<!--                    <h2>Data Usage</h2>-->
                     Manage long-term use of data collected in your home.
                 </div>
             </div>
@@ -42,13 +36,12 @@
 
         <div id="dsmui" style="display: none">
 			<div class="title">
-<!--                <div style="float:left;margin:10px;"><img src="../icons/home.png" style="width:30px;height:30px;"></div>-->
-                <button id="homebutton" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';"></button>
-				<div style="float:left;margin-left:10px;margin-top:16px;">Device/Sensor Management</div>
+                <button class="homebutton" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();"></button>
+				<div style="float:left;margin-left:10px;margin-top:16px;">Device and Sensor Management</div>
 			</div>
 			<div class="settingsWithScroll">
 				<div class="uifixtext">
-                    <p>Expand to give access for information collected by devices. Select who gets access and for what purpose. </p>
+                    <p>Expand to set permissions for information collected by who (which device) and for what purpose.</p>
                 </div>
 
                 <div class="devicecontainer">
@@ -60,79 +53,79 @@
                         </div>
                     </div>
                     <div id="se" class="dropdown" style="display: none">
-						<div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
+						<div style="padding:10px 10px;font-weight:bold"></div>
                         <table class="table" id="sedata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('se')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="seAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Home Security System can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('se','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('se','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('se','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('se','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="seAllButton" onclick="checkAll('se')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sese" id="seseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sese" id="seseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sese" id="seseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sese" id="sesealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sese" id="seseall" onchange="checkRow(this.checked, 'sese')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="sesealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="seseall" onclick="checkRow('sese',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sere" id="sereprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sere" id="sereloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sere" id="sereope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sere" id="serealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sere" id="sereall" onchange="checkRow(this.checked, ' sere')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="serealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sereall" onclick="checkRow('sere',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sehv" id="sehvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sehv" id="sehvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sehv" id="sehvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sehv" id="sehvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sehv" id="sehvall" onchange="checkRow(this.checked, 'sehv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sehvall" onclick="checkRow('sehv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sewm" id="sewmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sewm" id="sewmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sewm" id="sewmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sewm" id="sewmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sewm" id="sewmall" onchange="checkRow(this.checked,  'sewm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sewmall" onclick="checkRow('sewm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sels" id="selsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sels" id="selsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sels" id="selsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sels" id="selsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sels" id="selsall" onchange="checkRow(this.checked, 'sels')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="selsall" onclick="checkRow('sels',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sesa" id="sesaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sesa" id="sesaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sesa" id="sesaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sesa" id="sesaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sesa" id="sesaall" onchange="checkRow(this.checked, 'sesa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sesa" id="sesaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sesaall" onclick="checkRow('sesa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox setv" id="setvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox setv" id="setvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox setv" id="setvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox setv" id="setvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox setv" id="setvall" onchange="checkRow(this.checked, 'setv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox setv" id="setvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox setv" id="setvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox setv" id="setvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox setv" id="setvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="setvall" onclick="checkRow('setv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox secl" id="seclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox secl" id="seclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox secl" id="seclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox secl" id="seclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox secl" id="seclall" onchange="checkRow(this.checked, 'secl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox secl" id="seclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox secl" id="seclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox secl" id="seclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox secl" id="seclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="seclall" onclick="checkRow('secl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -147,79 +140,79 @@
                     </div>
 
                     <div id="re" class="dropdown" style="display: none">
-						<div style="padding:10px 10px;font-weight:bold">Data from this.checked device can be used by</div>
+						<div style="padding:10px 10px;font-weight:bold"></div>
                         <table class="table" id="redata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('re')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="reAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Refrigerator can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('re','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('re','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('re','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('re','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="reAllButton" onclick="checkAll('re')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox rere" id="rereprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rere" id="rereloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rere" id="rereope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rere" id="rerealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rere" id="rereall" onchange="checkRow(this.checked, 'rere')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rere" id="rereprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rere" id="rereloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rere" id="rereope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rere" id="rerealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="rereall" onclick="checkRow('rere',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox rese" id="reseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rese" id="reseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rese" id="reseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rese" id="resealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rese" id="reseall" onchange="checkRow(this.checked, ' rese')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rese" id="reseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rese" id="reseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rese" id="reseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rese" id="resealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="reseall" onclick="checkRow('rese',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox rehv" id="rehvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rehv" id="rehvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rehv" id="rehvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rehv" id="rehvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rehv" id="rehvall" onchange="checkRow(this.checked, 'rehv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rehv" id="rehvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rehv" id="rehvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rehv" id="rehvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rehv" id="rehvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="rehvall" onclick="checkRow('rehv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox rewm" id="rewmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rewm" id="rewmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rewm" id="rewmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rewm" id="rewmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rewm" id="rewmall" onchange="checkRow(this.checked,  'rewm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rewm" id="rewmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rewm" id="rewmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rewm" id="rewmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rewm" id="rewmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="rewmall" onclick="checkRow('rewm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox rels" id="relsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rels" id="relsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rels" id="relsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rels" id="relsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox rels" id="relsall" onchange="checkRow(this.checked, 'rels')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rels" id="relsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rels" id="relsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rels" id="relsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox rels" id="relsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="relsall" onclick="checkRow('rels',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox resa" id="resaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox resa" id="resaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox resa" id="resaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox resa" id="resaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox resa" id="resaall" onchange="checkRow(this.checked, 'resa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox resa" id="resaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox resa" id="resaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox resa" id="resaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox resa" id="resaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="resaall" onclick="checkRow('resa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox retv" id="retvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox retv" id="retvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox retv" id="retvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox retv" id="retvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox retv" id="retvall" onchange="checkRow(this.checked, 'retv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox retv" id="retvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox retv" id="retvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox retv" id="retvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox retv" id="retvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="retvall" onclick="checkRow('retv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox recl" id="reclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox recl" id="reclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox recl" id="reclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox recl" id="reclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox recl" id="reclall" onchange="checkRow(this.checked, 'recl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox recl" id="reclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox recl" id="reclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox recl" id="reclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox recl" id="reclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="reclall" onclick="checkRow('recl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -233,79 +226,79 @@
                     </div>
 
                     <div id="hv" class="dropdown" style="display: none">
-						<div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
+						<div style="padding:10px 10px;font-weight:bold"></div>
                         <table class="table" id="hvdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('hv')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="hvAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your HVAC can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('hv','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('hv','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('hv','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('hv','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="hvAllButton" onclick="checkAll('hv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvall" onchange="checkRow(this.checked, 'hvhv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvhv" id="hvhvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvhvall" onclick="checkRow('hvhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvse" id="hvseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvse" id="hvseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvse" id="hvseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvse" id="hvsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvse" id="hvseall" onchange="checkRow(this.checked, ' hvse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvse" id="hvseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvse" id="hvseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvse" id="hvseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvse" id="hvsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvseall" onclick="checkRow('hvse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvre" id="hvreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvre" id="hvreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvre" id="hvreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvre" id="hvrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvre" id="hvreall" onchange="checkRow(this.checked, 'hvre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvre" id="hvreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvre" id="hvreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvre" id="hvreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvre" id="hvrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvreall" onclick="checkRow('hvre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmall" onchange="checkRow(this.checked,  'hvwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvwm" id="hvwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvwmall" onclick="checkRow('hvwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsall" onchange="checkRow(this.checked, 'hvls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvls" id="hvlsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvlsall" onclick="checkRow('hvls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaall" onchange="checkRow(this.checked, 'hvsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvsa" id="hvsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvsaall" onclick="checkRow('hvsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvall" onchange="checkRow(this.checked, 'hvtv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvtv" id="hvtvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvtvall" onclick="checkRow('hvtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclall" onchange="checkRow(this.checked, 'hvcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox hvcl" id="hvclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="hvclall" onclick="checkRow('hvcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -318,79 +311,79 @@
                         </div></div>
 
                     <div id="wm" class="dropdown" style="display: none">
-						<div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
+						<div style="padding:10px 10px;font-weight:bold"></div>
                         <table class="table" id="wmdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><strong>Data from your wahcing machine can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('wm','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('wm','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('wm','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('wm','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
                                 <th><div class="tooltip" onclick="checkAll('wm')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="wmAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmall" onchange="checkRow(this.checked, 'wmwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmwm" id="wmwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmwm',true,true)"><div class="tooltip"><button class="allbutton" id="wmwmall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmse" id="wmseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmse" id="wmseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmse" id="wmseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmse" id="wmsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmse" id="wmseall" onchange="checkRow(this.checked, ' wmse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmse" id="wmseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmse" id="wmseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmse" id="wmseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmse" id="wmsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmse',true,true)"><div class="tooltip"><button class="allbutton" id="wmseall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmre" id="wmreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmre" id="wmreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmre" id="wmreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmre" id="wmrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmre" id="wmreall" onchange="checkRow(this.checked, 'wmre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmre" id="wmreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmre" id="wmreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmre" id="wmreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmre" id="wmrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmre',true,true)"><div class="tooltip"><button class="allbutton" id="wmreall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvall" onchange="checkRow(this.checked,  'wmhv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmhv" id="wmhvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmhv',true,true)"><div class="tooltip"><button class="allbutton" id="wmhvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsall" onchange="checkRow(this.checked, 'wmls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmls" id="wmlsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmls',true,true)"><div class="tooltip"><button class="allbutton" id="wmlsall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaall" onchange="checkRow(this.checked, 'wmsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmsa" id="wmsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmsa',true,true)"><div class="tooltip"><button class="allbutton" id="wmsaall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvall" onchange="checkRow(this.checked, 'wmtv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmtv" id="wmtvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('wmtv',true,true)"><div class="tooltip"><button class="allbutton" id="wmtvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclall" onchange="checkRow(this.checked, 'wmcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox wmcl" id="wmclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="wmclall" onclick="checkRow('wmcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -404,79 +397,79 @@
                     </div>
 
                     <div id="ls" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
+						<div style="padding:10px 10px;font-weight:bold"></div>
                         <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('ls')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Lighting System can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('ls','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('ls','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('ls','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('ls','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('ls')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsls" id="lslsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsls" id="lslsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsls" id="lslsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsls" id="lslsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsls" id="lslsall" onchange="checkRow(this.checked, 'lsls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsls" id="lslsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsls" id="lslsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsls" id="lslsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsls" id="lslsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lslsall" onclick="checkRow('lsls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsse" id="lsseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsse" id="lsseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsse" id="lsseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsse" id="lssealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsse" id="lsseall" onchange="checkRow(this.checked, ' lsse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsse" id="lsseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsse" id="lsseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsse" id="lsseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsse" id="lssealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lsseall" onclick="checkRow('lsse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsre" id="lsreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsre" id="lsreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsre" id="lsreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsre" id="lsrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lsre" id="lsreall" onchange="checkRow(this.checked, 'lsre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsre" id="lsreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsre" id="lsreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsre" id="lsreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lsre" id="lsrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lsreall" onclick="checkRow('lsre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lshv" id="lshvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lshv" id="lshvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lshv" id="lshvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lshv" id="lshvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lshv" id="lshvall" onchange="checkRow(this.checked,  'lshv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lshv" id="lshvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lshv" id="lshvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lshv" id="lshvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lshv" id="lshvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lshvall" onclick="checkRow('lshv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lswm" id="lswmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lswm" id="lswmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lswm" id="lswmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lswm" id="lswmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lswm" id="lswmsall" onchange="checkRow(this.checked, 'lswm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lswm" id="lswmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lswm" id="lswmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lswm" id="lswmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lswm" id="lswmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lswmall" onclick="checkRow('lswm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lssa" id="lssaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lssa" id="lssaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lssa" id="lssaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lssa" id="lssaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lssa" id="lssaall" onchange="checkRow(this.checked, 'lssa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lssa" id="lssaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lssa" id="lssaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lssa" id="lssaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lssa" id="lssaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lssaall" onclick="checkRow('lssa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lstv" id="lstvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lstv" id="lstvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lstv" id="lstvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lstv" id="lstvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lstv" id="lstvall" onchange="checkRow(this.checked, 'lstv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lstv" id="lstvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lstv" id="lstvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lstv" id="lstvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lstv" id="lstvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lstvall" onclick="checkRow('lstv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lscl" id="lsclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lscl" id="lsclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lscl" id="lsclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lscl" id="lsclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lscl" id="lsclall" onchange="checkRow(this.checked, 'lscl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lscl" id="lsclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lscl" id="lsclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lscl" id="lsclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lscl" id="lsclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lsclall" onclick="checkRow('lscl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -489,79 +482,79 @@
                     </div>
 
                     <div id="sa" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="sadata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('sa')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="saAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Smart Assistant can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('sa','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('sa','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('sa','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('sa','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('sa')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sasa" id="sasaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sasa" id="sasaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sasa" id="sasaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sasa" id="sasaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sasa" id="sasaall" onchange="checkRow(this.checked, 'sasa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sasa" id="sasaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sasa" id="sasaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sasa" id="sasaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sasa" id="sasaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sasaall" onclick="checkRow('sasa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sase" id="saseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sase" id="saseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sase" id="saseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sase" id="sasealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sase" id="saseall" onchange="checkRow(this.checked, ' sase')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sase" id="saseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sase" id="saseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sase" id="saseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sase" id="sasealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="saseall" onclick="checkRow('sase',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sare" id="sareprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sare" id="sareloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sare" id="sareope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sare" id="sarealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sare" id="sareall" onchange="checkRow(this.checked, 'sare')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sare" id="sareprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sare" id="sareloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sare" id="sareope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sare" id="sarealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sareall" onclick="checkRow('sare',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sahv" id="sahvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sahv" id="sahvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sahv" id="sahvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sahv" id="sahvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sahv" id="sahvall" onchange="checkRow(this.checked,  'sahv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sahv" id="sahvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sahv" id="sahvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sahv" id="sahvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sahv" id="sahvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sahvall" onclick="checkRow('sahv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sawm" id="sawmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sawm" id="sawmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sawm" id="sawmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sawm" id="sawmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sawm" id="sawmsall" onchange="checkRow(this.checked, 'sawm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sawm" id="sawmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sawm" id="sawmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sawm" id="sawmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sawm" id="sawmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sawmall" onclick="checkRow('sawm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sals" id="salsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sals" id="salsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sals" id="salsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sals" id="salsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sals" id="salsall" onchange="checkRow(this.checked, 'sals')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sals" id="salsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sals" id="salsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sals" id="salsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sals" id="salsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="salsall" onclick="checkRow('sals',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox satv" id="satvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox satv" id="satvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox satv" id="satvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox satv" id="satvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox satv" id="satvall" onchange="checkRow(this.checked, 'satv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox satv" id="satvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox satv" id="satvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox satv" id="satvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox satv" id="satvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="satvall" onclick="checkRow('satv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox sacl" id="saclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sacl" id="saclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sacl" id="saclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sacl" id="saclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox sacl" id="saclall" onchange="checkRow(this.checked, 'sacl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sacl" id="saclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sacl" id="saclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sacl" id="saclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sacl" id="saclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="saclall" onclick="checkRow('sacl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -575,79 +568,79 @@
                     </div>
 
                     <div id="tv" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="tvdata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('tv')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="tvAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Smart TV can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('tv','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('tv','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('tv','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('tv','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('tv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvall" onchange="checkRow(this.checked, 'tvtv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvtv" id="tvtvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvtvall" onclick="checkRow('tvtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvse" id="tvseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvse" id="tvseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvse" id="tvseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvse" id="tvsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvse" id="tvseall" onchange="checkRow(this.checked, ' tvse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvse" id="tvseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvse" id="tvseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvse" id="tvseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvse" id="tvsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvseall" onclick="checkRow('tvse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvre" id="tvreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvre" id="tvreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvre" id="tvreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvre" id="tvrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvre" id="tvreall" onchange="checkRow(this.checked, 'tvre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvre" id="tvreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvre" id="tvreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvre" id="tvreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvre" id="tvrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvreall" onclick="checkRow('tvre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvall" onchange="checkRow(this.checked,  'tvhv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvhv" id="tvhvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvhvall" onclick="checkRow('tvhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmsall" onchange="checkRow(this.checked, 'tvwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvwm" id="tvwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvwmall" onclick="checkRow('tvwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsall" onchange="checkRow(this.checked, 'tvls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvls" id="tvlsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvlsall" onclick="checkRow('tvls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaall" onchange="checkRow(this.checked, 'tvsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvsa" id="tvsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvsaall" onclick="checkRow('tvsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclall" onchange="checkRow(this.checked, 'tvcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox tvcl" id="tvclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="tvclall" onclick="checkRow('tvcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -661,79 +654,79 @@
                     </div>
 
                     <div id="cl" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="cldata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('cl')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="clAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Alarm Clock can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('cl','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('cl','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('cl','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('cl','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('cl')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clcl" id="clclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clcl" id="clclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clcl" id="clclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clcl" id="clclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clcl" id="clclall" onchange="checkRow(this.checked, 'clcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clcl" id="clclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clcl" id="clclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clcl" id="clclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clcl" id="clclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clclall" onclick="checkRow('clcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clse" id="clseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clse" id="clseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clse" id="clseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clse" id="clsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clse" id="clseall" onchange="checkRow(this.checked, ' clse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clse" id="clseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clse" id="clseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clse" id="clseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clse" id="clsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clseall" onclick="checkRow('clse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clre" id="clreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clre" id="clreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clre" id="clreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clre" id="clrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clre" id="clreall" onchange="checkRow(this.checked, 'clre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clre" id="clreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clre" id="clreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clre" id="clreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clre" id="clrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clreall" onclick="checkRow('clre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clhv" id="clhvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clhv" id="clhvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clhv" id="clhvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clhv" id="clhvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clhv" id="clhvall" onchange="checkRow(this.checked,  'clhv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clhv" id="clhvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clhv" id="clhvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clhv" id="clhvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clhv" id="clhvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clhvall" onclick="checkRow('clhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clwm" id="clwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clwm" id="clwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clwm" id="clwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clwm" id="clwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clwm" id="clwmsall" onchange="checkRow(this.checked, 'clwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clwm" id="clwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clwm" id="clwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clwm" id="clwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clwm" id="clwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clwmall" onclick="checkRow('clwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clls" id="cllsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clls" id="cllsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clls" id="cllsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clls" id="cllsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clls" id="cllsall" onchange="checkRow(this.checked, 'clls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clls" id="cllsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clls" id="cllsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clls" id="cllsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clls" id="cllsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="cllsall" onclick="checkRow('clls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox clsa" id="clsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clsa" id="clsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clsa" id="clsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clsa" id="clsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox clsa" id="clsaall" onchange="checkRow(this.checked, 'clsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clsa" id="clsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clsa" id="clsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clsa" id="clsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox clsa" id="clsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="clsaall" onclick="checkRow('clsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox cltv" id="cltvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cltv" id="cltvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cltv" id="cltvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cltv" id="cltvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cltv" id="cltvall" onchange="checkRow(this.checked, 'cltv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cltv" id="cltvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cltv" id="cltvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cltv" id="cltvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cltv" id="cltvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="cltvall" onclick="checkRow('cltv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -747,79 +740,79 @@
                     </div>
 
                     <div id="lo" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="lodata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('lo')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Location Sensor can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('lo','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('lo','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('lo','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('lo','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('lo')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lose" id="loseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lose" id="loseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lose" id="loseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lose" id="losealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lose" id="loseall" onchange="checkRow(this.checked, ' lose')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lose" id="loseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lose" id="loseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lose" id="loseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lose" id="losealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="loseall" onclick="checkRow('lose',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lore" id="loreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lore" id="loreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lore" id="loreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lore" id="lorealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lore" id="loreall" onchange="checkRow(this.checked, 'lore')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lore" id="loreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lore" id="loreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lore" id="loreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lore" id="lorealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="loreall" onclick="checkRow('lore',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lohv" id="lohvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lohv" id="lohvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lohv" id="lohvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lohv" id="lohvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lohv" id="lohvall" onchange="checkRow(this.checked,  'lohv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lohv" id="lohvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lohv" id="lohvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lohv" id="lohvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lohv" id="lohvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lohvall" onclick="checkRow('lohv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lowm" id="lowmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lowm" id="lowmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lowm" id="lowmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lowm" id="lowmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lowm" id="lowmsall" onchange="checkRow(this.checked, 'lowm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lowm" id="lowmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lowm" id="lowmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lowm" id="lowmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lowm" id="lowmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lowmall" onclick="checkRow('lowm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lols" id="lolsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lols" id="lolsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lols" id="lolsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lols" id="lolsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lols" id="lolsall" onchange="checkRow(this.checked, 'lols')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lols" id="lolsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lols" id="lolsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lols" id="lolsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lols" id="lolsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lolsall" onclick="checkRow('lols',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox losa" id="losaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox losa" id="losaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox losa" id="losaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox losa" id="losaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox losa" id="losaall" onchange="checkRow(this.checked, 'losa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox losa" id="losaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox losa" id="losaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox losa" id="losaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox losa" id="losaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="losaall" onclick="checkRow('losa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox lotv" id="lotvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lotv" id="lotvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lotv" id="lotvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lotv" id="lotvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox lotv" id="lotvall" onchange="checkRow(this.checked, 'lotv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lotv" id="lotvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lotv" id="lotvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lotv" id="lotvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox lotv" id="lotvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="lotvall" onclick="checkRow('lotv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox locl" id="loclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox locl" id="loclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox locl" id="loclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox locl" id="loclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox locl" id="loclall" onchange="checkRow(this.checked, 'locl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox locl" id="loclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox locl" id="loclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox locl" id="loclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox locl" id="loclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="loclall" onclick="checkRow('locl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -833,79 +826,79 @@
                     </div>
 
                     <div id="ca" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="cadata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('ca')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="caAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Camera can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('ca','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('ca','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('ca','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('ca','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('ca')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox case" id="caseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox case" id="caseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox case" id="caseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox case" id="casealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox case" id="caseall" onchange="checkRow(this.checked, ' case')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox case" id="caseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox case" id="caseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox case" id="caseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox case" id="casealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="caseall" onclick="checkRow('case',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox care" id="careprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox care" id="careloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox care" id="careope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox care" id="carealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox care" id="careall" onchange="checkRow(this.checked, 'care')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox care" id="careprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox care" id="careloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox care" id="careope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox care" id="carealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="careall" onclick="checkRow('care',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox cahv" id="cahvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cahv" id="cahvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cahv" id="cahvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cahv" id="cahvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cahv" id="cahvall" onchange="checkRow(this.checked,  'cahv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cahv" id="cahvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cahv" id="cahvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cahv" id="cahvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cahv" id="cahvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="cahvall" onclick="checkRow('cahv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox cawm" id="cawmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cawm" id="cawmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cawm" id="cawmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cawm" id="cawmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cawm" id="cawmsall" onchange="checkRow(this.checked, 'cawm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cawm" id="cawmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cawm" id="cawmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cawm" id="cawmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cawm" id="cawmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="cawmall" onclick="checkRow('cawm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox cals" id="calsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cals" id="calsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cals" id="calsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cals" id="calsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cals" id="calsall" onchange="checkRow(this.checked, 'cals')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cals" id="calsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cals" id="calsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cals" id="calsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cals" id="calsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="calsall" onclick="checkRow('cals',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox casa" id="casaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox casa" id="casaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox casa" id="casaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox casa" id="casaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox casa" id="casaall" onchange="checkRow(this.checked, 'casa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox casa" id="casaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox casa" id="casaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox casa" id="casaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox casa" id="casaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="casaall" onclick="checkRow('casa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox catv" id="catvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox catv" id="catvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox catv" id="catvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox catv" id="catvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox catv" id="catvall" onchange="checkRow(this.checked, 'catv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox catv" id="catvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox catv" id="catvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox catv" id="catvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox catv" id="catvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="catvall" onclick="checkRow('catv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox cacl" id="caclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cacl" id="caclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cacl" id="caclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cacl" id="caclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox cacl" id="caclall" onchange="checkRow(this.checked, 'cacl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cacl" id="caclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cacl" id="caclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cacl" id="caclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox cacl" id="caclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="caclall" onclick="checkRow('cacl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -919,79 +912,79 @@
                     </div>
 
                     <div id="mp" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="mpdata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('mp')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="mpAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Microphone can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('mp','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('mp','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('mp','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('mp','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('mp')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpse" id="mpseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpse" id="mpseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpse" id="mpseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpse" id="mpsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpse" id="mpseall" onchange="checkRow(this.checked, ' mpse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpse" id="mpseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpse" id="mpseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpse" id="mpseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpse" id="mpsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mpseall" onclick="checkRow('mpse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpre" id="mpreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpre" id="mpreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpre" id="mpreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpre" id="mprealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpre" id="mpreall" onchange="checkRow(this.checked, 'mpre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpre" id="mpreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpre" id="mpreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpre" id="mpreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpre" id="mprealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mpreall" onclick="checkRow('mpre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mphv" id="mphvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mphv" id="mphvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mphv" id="mphvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mphv" id="mphvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mphv" id="mphvall" onchange="checkRow(this.checked,  'mphv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mphv" id="mphvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mphv" id="mphvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mphv" id="mphvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mphv" id="mphvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mphvall" onclick="checkRow('mphv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmsall" onchange="checkRow(this.checked, 'mpwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpwm" id="mpwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mpwmall" onclick="checkRow('mpwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpls" id="mplsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpls" id="mplsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpls" id="mplsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpls" id="mplsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpls" id="mplsall" onchange="checkRow(this.checked, 'mpls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpls" id="mplsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpls" id="mplsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpls" id="mplsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpls" id="mplsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mplsall" onclick="checkRow('mpls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaall" onchange="checkRow(this.checked, 'mpsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpsa" id="mpsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mpsaall" onclick="checkRow('mpsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mptv" id="mptvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mptv" id="mptvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mptv" id="mptvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mptv" id="mptvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mptv" id="mptvall" onchange="checkRow(this.checked, 'mptv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mptv" id="mptvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mptv" id="mptvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mptv" id="mptvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mptv" id="mptvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mptvall" onclick="checkRow('mptv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclall" onchange="checkRow(this.checked, 'mpcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox mpcl" id="mpclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="mpclall" onclick="checkRow('mpcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
@@ -1005,84 +998,84 @@
                     </div>
 
                     <div id="sw" class="dropdown" style="display: none">
-                        <div style="padding:10px 10px;font-weight:bold">Data from this device can be used by</div>
-                        <table class="table" id="swdata">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="lsdata">
                             <tr>
-                                <th></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;"><span class="tooltiptext">detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;"><span class="tooltiptext">detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;"><span class="tooltiptext">automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;"><span class="tooltiptext">give you timely alarm</span></div></th>
-                                <th><div class="tooltip" onclick="checkAll('sw')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="swAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                                <th><strong>Data from your Smart Phone/Watch can be used by</strong></th>
+                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('sw','prs')"><span class="tooltiptext">detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('sw','loc')"><span class="tooltiptext">detect your location in house</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('sw','ope')"><span class="tooltiptext">automate its operation</span></div></th>
+                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('sw','alm')"><span class="tooltiptext">give you timely alarm</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('sw')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>Home Security System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swse" id="swseprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swse" id="swseloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swse" id="swseope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swse" id="swsealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swse" id="swseall" onchange="checkRow(this.checked, ' swse')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swse" id="swseprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swse" id="swseloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swse" id="swseope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swse" id="swsealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swseall" onclick="checkRow('swse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swre" id="swreprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swre" id="swreloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swre" id="swreope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swre" id="swrealm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swre" id="swreall" onchange="checkRow(this.checked, 'swre')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swre" id="swreprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swre" id="swreloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swre" id="swreope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swre" id="swrealm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swreall" onclick="checkRow('swre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swhv" id="swhvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swhv" id="swhvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swhv" id="swhvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swhv" id="swhvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swhv" id="swhvall" onchange="checkRow(this.checked,  'swhv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swhv" id="swhvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swhv" id="swhvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swhv" id="swhvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swhv" id="swhvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swhvall" onclick="checkRow('swhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washing Machine</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swwm" id="swwmprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swwm" id="swwmloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swwm" id="swwmope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swwm" id="swwmalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swwm" id="swwmsall" onchange="checkRow(this.checked, 'swwm')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swwm" id="swwmprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swwm" id="swwmloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swwm" id="swwmope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swwm" id="swwmalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swwmall" onclick="checkRow('swwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lighting System</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swls" id="swlsprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swls" id="swlsloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swls" id="swlsope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swls" id="swlsalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swls" id="swlsall" onchange="checkRow(this.checked, 'swls')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swls" id="swlsprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swls" id="swlsloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swls" id="swlsope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swls" id="swlsalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swlsall" onclick="checkRow('swls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swsa" id="swsaprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swsa" id="swsaloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swsa" id="swsaope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swsa" id="swsaalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swsa" id="swsaall" onchange="checkRow(this.checked, 'swsa')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swsa" id="swsaprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swsa" id="swsaloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swsa" id="swsaope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swsa" id="swsaalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swsaall" onclick="checkRow('swsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart TV</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swtv" id="swtvprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swtv" id="swtvloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swtv" id="swtvope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swtv" id="swtvalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swtv" id="swtvall" onchange="checkRow(this.checked, 'swtv')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swtv" id="swtvprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swtv" id="swtvloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swtv" id="swtvope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swtv" id="swtvalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swtvall" onclick="checkRow('swtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Alarm Clock</td>
-                                <td><input type="checkbox" checked class="largerCheckbox swcl" id="swclprs"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swcl" id="swclloc"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swcl" id="swclope"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swcl" id="swclalm"/></td>
-                                <td><input type="checkbox" checked class="largerCheckbox swcl" id="swclall" onchange="checkRow(this.checked, 'swcl')"/></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swcl" id="swclprs"/><span class="tooltiptext">detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swcl" id="swclloc"/><span class="tooltiptext">detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swcl" id="swclope"/><span class="tooltiptext">automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox swcl" id="swclalm"/><span class="tooltiptext">give you timely alarm</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="swclall" onclick="checkRow('swcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                         </table>
                     </div>
 
-                    <div><button class="button middle" style="top:10px;margin-left: -22px;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
+                    <div><button class="button middle" style="top:10px;margin-left: -22px;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();">Save</button></div>
                 </div>
 
 			</div>
@@ -1091,7 +1084,7 @@
 
         <div id="dusgui" style="display: none">
             <div class="title">
-                <button id="homebutton" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';"></button>
+                <button class="homebutton" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';"></button>
                 <div style="float:left;margin-left:26px;margin-top:16px;">Data Storage and Usage</div>
             </div>
             <div class="settings">
@@ -1121,7 +1114,7 @@
                     <h2>Data Usage</h2>
                     Manage what happens with the shared information.
                 </div>
-                
+
                 <div class="radiobox">
                     Optimize Services<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
                 </div>
@@ -1134,15 +1127,15 @@
                 <div class="radiobox">
                     Other users<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
                 </div>
-                
+
                 <div><button class="button middle" style="top:28px;" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
-                
+
             </div>
         </div>
-        
-
-
     </div>
-
+    <div id="continue" class="rightDiv">
+        <font size="5">After carefully reviewing each setting, please click on the following button to answer a few questions about your experience using the system.</font><br/><br/>
+        <button id="uifinishedbutton" class="uiFinishButton">Continue</button>
+    </div>
 </body>
 </html>

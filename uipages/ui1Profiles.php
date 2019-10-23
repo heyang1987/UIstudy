@@ -14,23 +14,24 @@
         
         <div id="profileSelect" style="display: block">
             <div class="title">
-                <p style="text-align: center;"><strong>Privacy Settings Profiles</strong></p>
+                <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
             </div>
             
             <div class="settings">
-                <div style="margin-top:-10px">
-                    <p style="font-size: 22px;margin-top: 10px"><strong>Please select a profile.</strong></p>
-                    <p style="font-size: 14px;margin-top: -20px">You can change individual settings on the next screen.</p>
+                <div class="uifixtext">
+                    <p><strong>Please read the description of the following privacy-setting profiles and select a profile that matches your privacy preference as much as possible. You can change individual settings in the profile on the next screen.</strong></p>
                 </div>
-                <div class="profile" style="top:90px;height:80px;background-color: lightyellow" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiEA').style.display='block';currentMenu='seEA'">
+                
+<!--
+                <div class="profile" style="top:90px;height:80px;background-color: green" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiEA').style.display='block';currentMenu='seEA'">
                     <div style="padding-top:10px">&nbsp;&nbsp;<strong>Enable All</strong></div>
                     <div style="position:relative;left:10px;width:250px;font-size:12px">Allow data to be collected, used, storaged and shared without restrictions.</div>                    
                 </div>
-                <div class="profile" style="top:170px;height:90px;background-color: lightyellow" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiNS').style.display='block';currentMenu='seNS'">
+                <div class="profile" style="top:170px;height:90px;background-color: lightgreen" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiNS').style.display='block';currentMenu='seNS'">
                     <div style="padding-top:5px">&nbsp;&nbsp;<strong>No Sharing</strong></div>
                     <div style="position:relative;left:10px;width:250px;font-size:12px">Allow data to be collected, used, and stored without restrictions but disable third party sharing.</div>
                 </div>
-                <div class="profile" style="top:260px;height:90px;background-color: lightblue" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiLS').style.display='block';currentMenu='seLS'">
+                <div class="profile" style="top:260px;height:90px;background-color: lightyellow" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiLS').style.display='block';currentMenu='seLS'">
                     <div style="padding-top:5px">&nbsp;&nbsp;<strong>Local Storage Only</strong></div>
                     <div style="position:relative;left:10px;width:250px;font-size:12px">Allow data to be collected and used without restrictions but disable remote storage and third party sharing</div>
                 </div>
@@ -42,6 +43,35 @@
                     <div style="padding-top:10px">&nbsp;&nbsp;<strong>Disable All</strong></div>
                     <div style="position:relative;left:10px;width:250px;font-size:12px">Turn off all smart home functionalities.</div>
                 </div>                                
+-->
+                <div class="inputGroup">
+                    <input id="profile1" name="radio" type="radio"/>
+                    <label for="profile1" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiEA').style.display='block';currentMenu='seEA'">Enable All
+                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, storaged and shared without restrictions.</div></label>
+                </div>
+                <div class="inputGroup">
+                    <input id="profile2" name="radio" type="radio"/>
+                    <label for="profile2" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiNS').style.display='block';currentMenu='seNS'">No Sharing
+                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, and stored without restrictions but disable third party sharing.</div></label>
+                </div>
+                <div class="inputGroup">
+                    <input id="profile3" name="radio" type="radio"/>
+                    <label for="profile3" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiLS').style.display='block';currentMenu='seLS'">Local Storage Only
+                    <div style="position:relative;left:10px;width:280px;font-size:12px">Allow data to be collected and used without restrictions but disable remote storage and third party sharing</div>
+                    </label>
+                </div>
+                <div class="inputGroup">
+                    <input id="profile4" name="radio" type="radio"/>
+                    <label for="profile4" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiNT').style.display='block';currentMenu='seNT'">No Tracking
+                    <div style="position:relative;left:10px;width:250px;font-size:12px">Allow all, except location and presence tracking data, to be collected, used, and shared without restrictions.</div>
+                    </label>
+                </div>
+                <div class="inputGroup">
+                    <input id="profile5" name="radio" type="radio"/>
+                    <label for="profile5" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('introuiDA').style.display='block';currentMenu='seDA'">Disable All
+                    <div style="position:relative;left:10px;width:250px;font-size:12px">Do not allow any data storage and sharing. Turn off all smart home functionalities.</div>
+                    </label>
+                </div>
             </div>
         </div>
         
