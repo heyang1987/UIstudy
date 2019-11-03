@@ -97,6 +97,9 @@ document.getElementById('continue').style.visibility = "visible";
 
 $(document).ready(function(){
     $("#uifinishedbutton").click(function() {
-        document.location.href = '../survey.php';
+//        alert("");
+//        document.location.href = '../survey.php';
+        document.getElementById('continue').style.visibility = "none";
+        document.getElementById('warn').style.visibility = "visible";
     });
 });

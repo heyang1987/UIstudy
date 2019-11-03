@@ -15,7 +15,7 @@
 		 
 		// Accessing session data
 		//echo 'Hi, ' . $_SESSION["firstname"] . ' ' . $_SESSION["lastname"];
-		print_r($_SESSION);
+		//print_r($_SESSION);
 	?>
     <h2>Final Survey</h2>
     <div id="welcome">
@@ -43,7 +43,7 @@
         <hr>
         <br/>
     </div>
-    <div id="surveypage1">
+    <div id="surveypage14">
         <div>
             What's your gender?
             <span><div>
@@ -58,12 +58,12 @@
 
             What's your age?
             <span><div>
-            <br/><label for='age1'><input type='radio' id='age1' name='age' value='1' onclick='boldage(this)'/>  18 - 20 years old </label>  
-            <br/><label for='age2'><input type='radio' id='age2' name='age' value='2' onclick='boldage(this)'/>  21 - 29 years old </label>
-            <br/><label for='age3'><input type='radio' id='age3' name='age' value='3' onclick='boldage(this)'/>  30 - 39 years old </label>    
-            <br/><label for='age4'><input type='radio' id='age4' name='age' value='4' onclick='boldage(this)'/>  40 - 49 years old </label>
-            <br/><label for='age5'><input type='radio' id='age5' name='age' value='5' onclick='boldage(this)'/>  50 - 59 years old </label>
-            <br/><label for='age6'><input type='radio' id='age6' name='age' value='6' onclick='boldage(this)'/>  60 years or older </label>
+            <br/><label for='age1'><input type='radio' id='age1' name='age' value='1' onclick='boldage(this)'/>  18 - 24 years old </label>  
+            <br/><label for='age2'><input type='radio' id='age2' name='age' value='2' onclick='boldage(this)'/>  25 - 34 years old </label>
+            <br/><label for='age3'><input type='radio' id='age3' name='age' value='3' onclick='boldage(this)'/>  35 - 44 years old </label>    
+            <br/><label for='age4'><input type='radio' id='age4' name='age' value='4' onclick='boldage(this)'/>  45 - 54 years old </label>
+            <br/><label for='age5'><input type='radio' id='age5' name='age' value='5' onclick='boldage(this)'/>  55 - 64 years old </label>
+            <br/><label for='age6'><input type='radio' id='age6' name='age' value='6' onclick='boldage(this)'/>  65 years or older </label>
             </div></span>
 
 
@@ -100,7 +100,7 @@
             <hr>
             <br>
 
-            Which of the following best describes your current housing situation??
+            Which of the following best describes your current housing situation?
             <span><div>
             <br/><label for='housing1'><input type='radio' id='housing1' name='housing' value='1' onclick='boldage(this)'/>  Homeowner </label>  
             <br/><label for='housing2'><input type='radio' id='housing2' name='housing' value='2' onclick='boldage(this)'/>  Renter </label>    
@@ -129,7 +129,7 @@
         <button id="surveypage1button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage2">
+    <div id="surveypage9">
         <div>
 <!--
             I know pretty much about smart home devices.
@@ -159,7 +159,7 @@
             <hr>
             <br>
             
-            Among my circle of friends, I am one of the "experts" on smart home devices.
+            Among my circle of friends, I am the expert on smart home devices.
             <span><div>
             <br/><label for='knowledge31'><input type='radio' id='knowledge31' name='knowledge3' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='knowledge32'><input type='radio' id='knowledge32' name='knowledge3' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -172,7 +172,7 @@
             <hr>
             <br>
             
-            Compared to most other people, I know <b>less</b> about smart home devices.
+            Compared to most people, I know <b>less</b> about smart home devices.
             <span><div>
             <br/><label for='knowledge41'><input type='radio' id='knowledge41' name='knowledge4' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='knowledge42'><input type='radio' id='knowledge42' name='knowledge4' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -201,7 +201,7 @@
         <button id="surveypage2button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage3">
+    <div id="surveypage10">
         <div>
             I prefer to gather all the necessary information before committing to a decision.
             <span><div>
@@ -271,7 +271,7 @@
         <button id="surveypage3button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage4">
+    <div id="surveypage11">
         <div>
             When making decisions, I rely mainly on my gut feelings.
             <span><div>
@@ -341,7 +341,7 @@
         <button id="surveypage4button" class="button right"><strong>Next</strong></button>
     </div>
         
-    <div id="surveypage5">
+    <div id="surveypage12">
         <div>
             All things considered, the Internet causes serious privacy problems.
             <span><div>
@@ -424,7 +424,7 @@
         <button id="surveypage5button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage6">
+    <div id="surveypage13">
         <div>
             It usually bothers me when online companies ask me for personal information.
             <span><div>
@@ -452,7 +452,7 @@
             <hr>
             <br>
             
-            It bothers me to give personal information to so many online companies.
+            It bothers me to give personal information to online companies.
             <span><div>
             <br/><label for='collect31'><input type='radio' id='collect31' name='collect3' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='collect32'><input type='radio' id='collect32' name='collect3' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -507,7 +507,8 @@
         <button id="surveypage6button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage7">
+<!--    perceived usefulness-->
+    <div id="surveypage2">
         <div>
             Based on what I have seen, the system is useful.
             <span><div>
@@ -548,7 +549,8 @@
             <hr>
             <br>
             
-            The system makes the privacy settings for all my household IoT devices easier to get done.
+<!--            The system makes the privacy settings for all my household IoT devices easier to get done.-->
+            THe privacy setting task would be easier to finish with the help of this system.
             <span><div>
             <br/><label for='useful41'><input type='radio' id='useful41' name='useful4' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='useful42'><input type='radio' id='useful42' name='useful4' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -603,7 +605,8 @@
         <button id="surveypage7button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage8">
+<!--    complexity & match-->
+    <div id="surveypage4">
         <div>
             The interface of the system is complex.
             <span><div>
@@ -618,7 +621,7 @@
             <hr>
             <br>
             
-            The settings preset in the system match my privacy preference.
+            The settings preset in the system match my privacy preferences.
             <span><div>
             <br/><label for='match1'><input type='radio' id='match1' name='match' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='match2'><input type='radio' id='match2' name='match' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -647,7 +650,8 @@
         <button id="surveypage8button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage9">
+<!--    Perceived Ease of Use-->
+    <div id="surveypage3">
         <div>
             It is convenient to set my preferences in the system.
             <span><div>
@@ -701,7 +705,7 @@
             <hr>
             <br>
             
-            I feel setting my privacy preference in the system is easy.
+            I feel setting my privacy preferences within the system is easy.
             <span><div>
             <br/><label for='ease51'><input type='radio' id='ease51' name='ease5' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='ease52'><input type='radio' id='ease52' name='ease5' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -782,9 +786,9 @@
         <button id="surveypage9button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage10">
+    <div id="surveypage6">
         <div>
-            I am afraid that due to my settings, I am sharing my personal information too freely.
+            I am afraid that I am sharing my personal information too freely, due to my privacy settings.
             <span><div>
             <br/><label for='threat11'><input type='radio' id='threat11' name='threat1' value='-2' onclick='boldage(this)'/>  Strongly Disagree </label>  
             <br/><label for='threat12'><input type='radio' id='threat12' name='threat1' value='-1' onclick='boldage(this)'/>  Disagree </label>  
@@ -878,7 +882,7 @@
         <button id="surveypage10button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage11">
+    <div id="surveypage5">
         <div>
             The system helped me to decide what information I should disclose.
             <span><div>
@@ -935,7 +939,7 @@
         <button id="surveypage11button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage12">
+    <div id="surveypage7">
         <div>
             I had limited control over the way this system made privacy settings.
             <span><div>
@@ -992,7 +996,7 @@
         <button id="surveypage12button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage13">
+    <div id="surveypage1">
         <div>
             The system has no real benefit to me.
             <span><div>
@@ -1127,7 +1131,7 @@
         <button id="surveypage13button" class="button right"><strong>Next</strong></button>
     </div>
     
-    <div id="surveypage14">
+    <div id="surveypage8">
         <div>
             I believe the company providing this software is trustworthy in handling my information.
             <span><div>

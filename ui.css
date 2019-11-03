@@ -511,8 +511,26 @@ input:checked + .slider:before {
 
 .rightDiv {
     visibility:hidden;
-    float: right;
-    width:400px;
-    margin-right: 50px;
-    margin-top:500px
+    position:relative;
+    z-index:999;
+    width: 22%;
+    height:auto;
+    margin-top: 35%;
+    margin-left: 68%;
+    padding: 10px;
+    color: white;
+    background-color:#FFA500;
+}
+
+.uiWarn {
+    visibility: hidden;
+    position:relative;
+    z-index:1000;
+    width: 22%;
+    height:auto;
+    margin-top: 35%;
+    margin-left: 68%;
+    padding: 10px;
+    color: white;
+    background-color:#FFA500;
 }

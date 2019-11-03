@@ -1134,8 +1134,14 @@
         </div>
     </div>
     <div id="continue" class="rightDiv">
-        <font size="5">After carefully reviewing each setting, please click on the following button to answer a few questions about your experience using the system.</font><br/><br/>
-        <button id="uifinishedbutton" class="uiFinishButton">Continue</button>
+        <strong>Looking for the "Next" button :-)?</strong>
+        <p>After carefully reviewing each setting, please click on the following button to answer a few questions about your experience using the system.</p>
+        <button id="uifinishedbutton" class="uiFinishButton">Next</button>
+    </div>
+    <div id="warn" class="uiWarn">
+        <strong>Do you really want to go next?</strong>
+        <p>Make sure you clicked on every privacy-setting tab and made changes according to your preferences. Otherwise, you will fail the manual check and will not get your payment.</p>
+        <button class="uiFinishButton" onclick="document.location.href = '../survey.php'">Next</button>
     </div>
 </body>
 </html>

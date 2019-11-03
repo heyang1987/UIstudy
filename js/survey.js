@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function(){
-    $('#statusbar, #surveypage2, #surveypage3, #surveypage4, #surveypage5, #surveypage6, #surveypage7, #surveypage8, #surveypage9, #surveypage10, #surveypage11, #surveypage12, #surveypage13, #end').hide();
+    $('#statusbar, #surveypage1, #surveypage2, #surveypage3, #surveypage4, #surveypage5, #surveypage6, #surveypage7, #surveypage8, #surveypage9, #surveypage10, #surveypage11, #surveypage12, #surveypage13, #surveypage14, #end').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
     var consentbutton = document.getElementById('consentbutton');

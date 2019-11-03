@@ -16,9 +16,9 @@ function showDivs(n) {
     var i;
 //            alert(n);
     slideIndex = n;
-    if (n == image.length-1) {
-        document.getElementById('introductionbutton').style.display='block';
-    }
+//    if (n == image.length-1) {
+//        document.getElementById('introductionbutton').style.display='block';
+//    }
     if (n <= 0) {document.getElementById("slideshowleftbutton").disabled = true;}
     else {document.getElementById("slideshowleftbutton").disabled = false;}
     if (n > frontline || n == image.length-1) {document.getElementById("slideshowrightbutton").disabled = true;}
@@ -74,11 +74,13 @@ $(document).ready(function(){
     $("#preIntroButton").click(function() {
         preIntro.style.display = 'none';
         introduction.style.display = 'block'; 
-        showDivs(12);
+        showDivs(0);
     });
 
     $("#introductionbutton").click(function() {
-        audio[12].pause();
+        for (var i = 0; i < image.length; i++) {
+            audio[i].pause();
+        }
         introduction.style.display = 'none';
         prepage.style.display = 'block';        
     });
@@ -128,8 +130,7 @@ $(document).ready(function(){
     audio[9].onended = function() {showDivs(10);frontline = 9;};
     audio[10].onended = function() {showDivs(11);frontline = 10;};
     audio[11].onended = function() {showDivs(12);frontline = 11;};
-//            audio[12].onended = function() {showDivs(13);frontline = 12;};
-//            audio[13].onended = function() {showDivs(14);frontline = 13;};
+    audio[12].onended = function() {frontline = 12;document.getElementById("introductionbutton").disabled = false;};
 });
 
 function fixStepIndicator(n) {

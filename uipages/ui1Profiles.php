@@ -77,21 +77,28 @@
         
         <div id="introuiEA" style="display: none">
             <div class="title">
-                <p><span style="font-size:12px;color:#522D80;" onclick="document.getElementById('introuiEA').style.display='none';document.getElementById('profileSelect').style.display='block';">&lt;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="align-content: center"><strong>Privacy Settings</strong></span></p>
+                <button class="homebutton" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();"></button>
+                <div style="float:left;margin-left:10px;margin-top:16px;">Household IoT Privacy Settings</div>
             </div>
                         
             <div class="settings">
-                <span style="font-size:14px;text-align: center;">For <strong>Enable All</strong> profile, manage information collection by devices or data usage</span>
+                <div class="uifixtext" style="margin-top: 10px;">
+                    For <strong>Enable All</strong> profile, manage information collection by devices or data usage
+                </div>
 
                 <!-- Device/Sensor Management -->
-                <div class="dsmbox" onclick=document.getElementById('introuiEA').style.display='none';document.getElementById('dsmuiEA').style.display='block';currentMenu='seEA'>
-                    <p style="font-size:21px;"><strong>Device / Sensor Management</strong></p>
-                    Manage Device access to data collected in your home
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introuiEA').style.display='none';document.getElementById('dsmuiEA').style.display='block';currentMenu='seEA'>
+                    <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                </div>
+                <div class="uifixtext" style="margin-top: 10px;">
+                    Manage IoT device access to the data collected by other IoT devices in your home.
                 </div>
                 <!-- Data Usage Management -->
-                <div class="dumbox" onclick=document.getElementById('introuiEA').style.display='none';document.getElementById('dusguiEA').style.display='block';currentMenu='seEA'>
-                    <p style="font-size:22px"><strong>Data Usage</strong></p>
-                    Manage long-term use of data collected in your home
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introuiEA').style.display='none';document.getElementById('dusguiEA').style.display='block';currentMenu='seEA'>
+                    <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                </div>
+                <div class="uifixtext" style="margin-top:10px;">
+                    Manage long-term use of data collected in your home.
                 </div>
             </div>
         </div>
