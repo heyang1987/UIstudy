@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,9 +12,34 @@ session_start();
 </head>
 <body>
 	<?php
-	// Storing session data
-	$_SESSION["firstname"] = "Yang";
-	$_SESSION["lastname"] = "He";
+    ob_start();
+    include "db.php";
+    $mysqli = OpenCon();
+    
+    /* check connection */
+    if ($mysqli->connect_errno) {
+        printf("Connect failed: %s\n", $mysqli->connect_error);
+        exit();
+    }
+    
+    //echo session_id();
+    $sessionId = session_id();
+    $timestamp = time(); 
+    //echo $timestamp;
+    
+    if($result = $mysqli->query("SELECT * FROM uistudy WHERE (sessionid = '$sessionId')")) {
+        //printf("Select returned %d rows.\n", $result->num_rows);
+        /* free result set */
+        if ($result->num_rows == 0) {
+            $mysqli->query("INSERT INTO uistudy (sessionid, time1) VALUES ('$sessionId', now())");       
+        }
+        $result->close();
+    }
+//        CloseCon($mysqli);
+        // Storing session data
+//        $_SESSION["firstname"] = "Yang";
+//        $_SESSION["lastname"] = "He";  
+    
 	?>    
     <div class="parent_container">
         <div id="welcomeBody">
@@ -22,17 +47,18 @@ session_start();
                 <span><h1><strong>Welcome</strong></h1></span>
                 <span><h4>Welcome to the smart home settings User Interface (UI) Study conducted by Clemson University</h4></span>
                 <hr>
-                <span>Dr. Knijnenburg invites you to take part in a research study. Dr. Knijnenburg is a professor at Clemson University. This is a study that aims to test a new User Interface (UI) for smart home users. Your participation in this study will be valued.
-                <br/><br/>
-                <strong>It will take you about 15-20 minutes to complete the four steps of the study:   
+                <p>Dr. Knijnenburg invites you to take part in a research study. Dr. Knijnenburg is a professor at Clemson University. This is a study that aims to test a new User Interface (UI) for smart home users. Your participation in this study will be valued.</p>
+
+                <p>It will take you about 15-20 minutes to complete the four steps of the study:</p>
                 <ol>	
                     <li> Introduction</li>
                     <li> Instructions for the study </li>
                     <li> Evaluate a smart home settings UI </li>
                     <li> Complete a survey </li>				
                 </ol>
-                </strong>
-                </span>
+            
+                    
+                <strong>It is better to use a desktop or a laptop to do this study. Also, using a mouse is recommended since there will be a lot of clicking. Thank you!</strong>
             </div>
             <div class="bottomrow">
                 <button id="welcomeButton" class="button right"><strong>Continue</strong></button>
@@ -151,7 +177,40 @@ session_start();
                 <img src="./images/uiscreenshot.png" width="800px">
             </div>
             <div>
-                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>
+            <?php
+            if(isset($_POST['prepagebutton']))
+            {
+//                $date_clicked = date('Y-m-d H:i:s');;
+//                echo "Time the button was clicked: " . $date_clicked . "<br>";
+                $mysqli->query("UPDATE uistudy SET time2 = now() WHERE (sessionid = '$sessionId')");
+                
+                $condition = rand(1,1);
+                console.log("$condition");
+                switch ($condition) {
+                    case 1:
+                        header("Location: uipages/ui1allOff.php");
+                        break;
+                    case 2:
+                        header("Location: uipages/ui1allOff.php");
+                        break;
+//                    case 3:
+//                        echo "3";
+////                        header("Location: anotherDirectory/anotherFile.php");
+//                        break;
+//                    case 4:
+//                        echo "4";
+//                        break;
+                    default:
+                        echo "error!";
+                }        
+            } ?>
+            <form action="" method="POST">
+                <button name="prepagebutton" class="button right">Start!</button>
+            </form>
+
+
+
+<!--                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>-->
 <!--                <button class="button right" onclick="location.href = './uipages/ui1AllOff.php'";><strong>Start!</strong></button>-->
             </div>
             

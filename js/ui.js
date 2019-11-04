@@ -92,14 +92,32 @@ function closeLeftDropdown() {
 }
 
 setTimeout(function(){
-document.getElementById('continue').style.visibility = "visible";
-},10000);
+    document.getElementById('continue').style.visibility = "visible";
+},1000);
 
-$(document).ready(function(){
-    $("#uifinishedbutton").click(function() {
-//        alert("");
-//        document.location.href = '../survey.php';
-        document.getElementById('continue').style.visibility = "none";
-        document.getElementById('warn').style.visibility = "visible";
-    });
-});
+//$(document).ready(function(){
+//    $('#uifinishedbutton').click(function() {
+////        //        alert("");
+////        //        document.location.href = '../survey.php';
+////                document.getElementById('continue').style.visibility = "none";
+//
+////                setTimeout(function(){
+////                    document.getElementById('gotosurveybutton').style.visibility = "visible";
+////                }, 3000);
+//        // new method
+//        $("#continue").hide();
+//        //document.getElementById('warn').style.visibility = "visible";
+//        $("#warningDialog").show();
+//        $("#gotosurveybutton").hide();
+//        $("#gotosurveybutton").delay(4000).fadeIn();
+//    });
+//});
+
+function handler() {
+//    alert("1");
+    $("#continue").hide();
+    document.getElementById('warningDialog').style.visibility = "visible";
+    $("#warningDialog").show();
+    $("#gotosurveybutton").hide();
+    $("#gotosurveybutton").delay(4000).fadeIn();
+}

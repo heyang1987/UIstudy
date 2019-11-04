@@ -85,19 +85,19 @@ $(document).ready(function(){
         prepage.style.display = 'block';        
     });
     
-    $("#prepagebutton").click(function() {
-        //alert("start clicked!");
-        var rdnum = Math.floor(Math.random() * 3);
-        switch (rdnum){
-            case(0):
-                document.location.href = './uipages/ui1AllOff.php';
-                break;
-            case(1):
-                document.location.href = './uipages/ui1AllOn.php';
-                break;
-            case(2):
-                document.location.href = './uipages/ui1OneRule.php';
-                break;
+//    $("#prepagebutton").click(function() {
+//        //alert("start clicked!");
+//        var rdnum = Math.floor(Math.random() * 1);
+//        switch (rdnum){
+//            case(0):
+//                document.location.href = './uipages/ui1allOff.php';
+//                break;
+//            case(1):
+//                document.location.href = './uipages/ui1allOn.php';
+//                break;
+//            case(2):
+//                document.location.href = './uipages/ui1oneRule.php';
+//                break;
 //            case(3):
 //                document.location.href = './uipages/ui2AllOn.php';
 //                break;
@@ -113,10 +113,10 @@ $(document).ready(function(){
 //            case(7):
 //                document.location.href = './uipages/ui1AllOff.php';
 //                break;
-            default:
-                window.alert("error!");
-        }
-    });
+//            default:
+//                window.alert("error!");
+//        }
+//    });
 
     audio[0].onended = function() {showDivs(1);frontline = 0;};
     audio[1].onended = function() {showDivs(2);frontline = 1;};
@@ -132,6 +132,18 @@ $(document).ready(function(){
     audio[11].onended = function() {showDivs(12);frontline = 11;};
     audio[12].onended = function() {frontline = 12;document.getElementById("introductionbutton").disabled = false;};
 });
+
+//function start() {
+//        alert("start clicked!");
+//        var rdnum = Math.floor(Math.random() * 1);
+//        switch (rdnum){
+//            case(0):
+//                document.location.href = './uipages/ui1allOff.php';
+//                break;
+//            default:
+//                window.alert("error!");
+//        }
+//}
 
 function fixStepIndicator(n) {
     // This function removes the 'active' class of all steps...

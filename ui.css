@@ -511,7 +511,7 @@ input:checked + .slider:before {
 
 .rightDiv {
     visibility:hidden;
-    position:relative;
+    position:absolute;
     z-index:999;
     width: 22%;
     height:auto;
@@ -524,7 +524,7 @@ input:checked + .slider:before {
 
 .uiWarn {
     visibility: hidden;
-    position:relative;
+    position:absolute;
     z-index:1000;
     width: 22%;
     height:auto;
