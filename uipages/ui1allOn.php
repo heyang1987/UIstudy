@@ -1,6 +1,10 @@
 <?php
     session_start();
     $sessionId = session_id();
+    ob_start();
+    include_once "../db.php";
+    $mysqli = OpenCon();
+    $mysqli->query("UPDATE uistudy SET time2 = now(), cond = '3' WHERE (sessionid = '$sessionId')");
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,23 +12,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../ui.css">
-    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/ui.js"></script>
-
+    <script>
+        // Warning before leaving the page (back button, or outgoinglink)
+        window.onbeforeunload = function() {
+           return "Do you really want to leave our study?";
+           //if we return nothing here (just calling return;) then there will be no pop-up question at all
+           //return;
+        };
+    </script>
 </head>
 <body>
-    <?php
-    ob_start();
-    include_once "../db.php";
-    $mysqli = OpenCon();
-    
-    ?>
     <div class="container">
         <img src="../images/u1.png" width="400">
 
         <div id="introui">
             <div class="title">
-                <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
+                <div style="text-align: center;margin-top:16px;">Household smart home Privacy Settings</div>
             </div>
 
             <div class="settings">
@@ -32,11 +37,11 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart home device access to the data collected by other smart home devices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';currentMenu='se'>
-                    <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                    <strong>Data Storage and Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top:10px;">
                     Manage long-term use of data collected in your home.
@@ -67,55 +72,56 @@
                         <table class="table" id="sedata">
                             <tr>
                                 <th><strong>Data from your Home Security System can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('se','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('se','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('se','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('se','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
-                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="seAllButton" onclick="checkAll('se')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+<!--                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('se','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>-->
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('se','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('se','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('se','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('se','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:38px;font-size:14px;padding:5px 1px" id="seAllButton" onclick="checkAll('se')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
                                 <td>The device itself</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="seseope"/><span class="tooltiptext">to automate its operation</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sese" id="sesealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sese" id="seseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sese" id="seseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sese" id="seseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sese" id="sesealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
                                 <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="seseall" onclick="checkRow('sese',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Refrigerator</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="sereope"/><span class="tooltiptext">to automate its operation</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sere" id="serealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sere" id="sereprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sere" id="sereloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sere" id="sereope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sere" id="serealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
                                 <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sereall" onclick="checkRow('sere',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>HVAC System</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvope"/><span class="tooltiptext">to automate its operation</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sehv" id="sehvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sehv" id="sehvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sehv" id="sehvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sehv" id="sehvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sehv" id="sehvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
                                 <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sehvall" onclick="checkRow('sehv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Washer</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmope"/><span class="tooltiptext">to automate its operation</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sewm" id="sewmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sewm" id="sewmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sewm" id="sewmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sewm" id="sewmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sewm" id="sewmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
                                 <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="sewmall" onclick="checkRow('sewm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Lights</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsope"/><span class="tooltiptext">to automate its operation</span></div></td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sels" id="selsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sels" id="selsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sels" id="selsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sels" id="selsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sels" id="selsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
                                 <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="selsall" onclick="checkRow('sels',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
                             </tr>
                             <tr>
                                 <td>Smart Assistant</td>
-                                <td><div class="tooltip"><input type="checkbox" checked checked class="largerCheckbox sesa" id="sesaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaope"/><span class="tooltiptext">to automate its operation</span></div></td>
                                 <td><div class="tooltip"><input type="checkbox" checked class="largerCheckbox sesa" id="sesaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
@@ -154,10 +160,10 @@
                         <table class="table" id="redata">
                             <tr>
                                 <th><strong>Data from your Refrigerator can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('re','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('re','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('re','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('re','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('re','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('re','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('re','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('re','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="reAllButton" onclick="checkAll('re')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -240,10 +246,10 @@
                         <table class="table" id="hvdata">
                             <tr>
                                 <th><strong>Data from your HVAC can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('hv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('hv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('hv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('hv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('hv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('hv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('hv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('hv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="hvAllButton" onclick="checkAll('hv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -325,10 +331,10 @@
                         <table class="table" id="wmdata">
                             <tr>
                                 <th><strong>Data from your wahcing machine can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('wm','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('wm','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('wm','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('wm','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('wm','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('wm','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('wm','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('wm','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip" onclick="checkAll('wm')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="wmAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -411,10 +417,10 @@
                         <table class="table" id="lsdata">
                             <tr>
                                 <th><strong>Data from your Lights can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('ls','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('ls','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('ls','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('ls','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('ls','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('ls','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('ls','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('ls','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('ls')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -493,13 +499,13 @@
 
                     <div id="sa" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="sadata">
                             <tr>
                                 <th><strong>Data from your Smart Assistant can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('sa','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('sa','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('sa','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('sa','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('sa','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('sa','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('sa','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('sa','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('sa')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -579,13 +585,13 @@
 
                     <div id="tv" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="tvdata">
                             <tr>
                                 <th><strong>Data from your Smart TV can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('tv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('tv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('tv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('tv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('tv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('tv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('tv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('tv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('tv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -665,13 +671,13 @@
 
                     <div id="cl" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="cldata">
                             <tr>
                                 <th><strong>Data from your Alarm Clock can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('cl','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('cl','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('cl','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('cl','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('cl','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('cl','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('cl','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('cl','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('cl')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -751,13 +757,13 @@
 
                     <div id="lo" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="lodata">
                             <tr>
                                 <th><strong>Data from your Location Sensor can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('lo','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('lo','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('lo','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('lo','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('lo','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('lo','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('lo','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('lo','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('lo')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -837,13 +843,13 @@
 
                     <div id="ca" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="cadata">
                             <tr>
                                 <th><strong>Data from your Camera can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('ca','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('ca','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('ca','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('ca','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('ca','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('ca','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('ca','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('ca','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('ca')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -923,13 +929,13 @@
 
                     <div id="mp" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="mpdata">
                             <tr>
                                 <th><strong>Data from your Microphone can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('mp','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('mp','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('mp','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('mp','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('mp','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('mp','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('mp','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('mp','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('mp')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -1009,13 +1015,13 @@
 
                     <div id="sw" class="dropdown" style="display: none">
 						<div style="padding:10px 10px;font-weight:bold"></div>
-                        <table class="table" id="lsdata">
+                        <table class="table" id="swdata">
                             <tr>
                                 <th><strong>Data from your Smart Phone/Watch can be used by</strong></th>
-                                <th><div class="tooltip"><img src="../icons/001.png" style="width:25px;height:25px;" onclick="checkCol('sw','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/002.png" style="width:25px;height:25px;" onclick="checkCol('sw','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/003.png" style="width:25px;height:25px;" onclick="checkCol('sw','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
-                                <th><div class="tooltip"><img src="../icons/004.png" style="width:25px;height:25px;" onclick="checkCol('sw','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('sw','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('sw','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('sw','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('sw','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
                                 <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="loAllButton" onclick="checkAll('sw')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
                             </tr>
                             <tr>
@@ -1085,7 +1091,7 @@
                         </table>
                     </div>
 
-                    <div><button class="button middle" style="top:10px;margin-left: -22px;" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();">Save</button></div>
+                    <div><button class="button middle" style="top:5px;margin-left: -30px;height:28px" onclick="document.getElementById('dsmui').style.display='none';document.getElementById('introui').style.display='block';closeLeftDropdown();">Save</button></div>
                 </div>
 
 			</div>
@@ -1097,29 +1103,29 @@
                 <button class="homebutton" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';"></button>
                 <div style="float:left;margin-left:26px;margin-top:16px;">Data Storage and Usage</div>
             </div>
-            <div class="settings">
+            <div class="settings" style="font-size:15px">
                 <div class="uifixtext">
                     <h2>Storage and Sharing</h2>
-                    Control the extent of sharing of the information collected by different devices in your smart home.
+                    Choose <b>one</b> storage plan from below to control where to store the information collected and the extent of sharing by different devices in your smart home.
                 </div>
 
 <!--
                 <div class="inputGroup">
-                    <input id="radio1" name="radio" type="radio"/>
+                    <input id="radio1" name="radio" type="radio" checked/>
                     <label for="radio1">No Storage</label>
                 </div>
 -->
                 <div class="inputGroup">
+                    <input id="radio1" name="radio" type="radio"/>
+                    <label for="radio1">Local Only</label>
+                </div>
+                <div class="inputGroup">
                     <input id="radio2" name="radio" type="radio"/>
-                    <label for="radio2">Local Only</label>
+                    <label for="radio2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radio" type="radio"/>
-                    <label for="radio3">Local + Remote Server</label>
-                </div>
-                <div class="inputGroup">
-                    <input id="radio4" name="radio" type="radio" checked/>
-                    <label for="radio4">Local + Remote Server + Third Party Sharing</label>
+                    <input id="radio3" name="radio" type="radio" checked/>
+                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
                 </div>
 
                 <div class="uifixtext">
@@ -1128,10 +1134,10 @@
                 </div>
 
                 <div class="radiobox">
-                    Optimize Services<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                    Optimize services<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
                 </div>
                 <div class="radiobox">
-                    Behavioral Insights<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                    Behavioral insights<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
                 </div>
                 <div class="radiobox">
                     Recommendation<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
@@ -1140,7 +1146,7 @@
                     Other uses<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
                 </div>
 
-                <div><button class="button middle" style="top:28px;" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
+                <div><button class="button middle" style="top:20px;height:28px" onclick="document.getElementById('dusgui').style.display='none';document.getElementById('introui').style.display='block';">Save</button></div>
 
             </div>
         </div>
@@ -1148,22 +1154,24 @@
     <div id="continue" class="rightDiv">
         <strong>Looking for the "Continue" button :-)?</strong>
         <p>After carefully reviewing each setting, please click on the following button to answer a few questions about your experience using the system.</p>
-        <button id="uifinishedbutton" class="uiFinishButton" onclick="handler();">Continue</button>
+        <button id="uifinishedbutton" class="button uiFinishButton" onclick="handler();">Continue</button>
     </div>
-    <div id="warningDialog" class="uiWarn" style="display: none">
+    <div id="warningDialog" class="rightDiv" style="display: none">
         <strong>Do you really want to continue?</strong>
         <p>Make sure you clicked on every privacy-setting tab and made changes according to your preferences. Otherwise, you will fail the manual check and will not get your payment.</p>
-<!--        <button id="gotosurveybutton" class="uiFinishButton" onclick="document.location.href = '../survey.php'">Continue</button>-->
+        <button id="gotosurveybutton" class="button uiFinishButton" onclick="window.onbeforeunload = null;document.location.href = '../survey.php'">Continue</button>
         <?php
-        if(isset($_POST['gotosurveybutton']))
-        {
-            $mysqli->query("UPDATE uistudy SET time3 = now() WHERE (sessionid = '$sessionId')");
-            header("Location: ../survey.php");
-        }
+//        if(isset($_POST['gotosurveybutton']))
+//        {
+//            $mysqli->query("UPDATE uistudy SET time3 = now() WHERE (sessionid = '$sessionId')");
+//            header("Location: ../survey.php");
+//        }
         ?>
+<!--
         <form action="" method="POST">
-            <button id="gotosurveybutton" name="gotosurveybutton" class="uiFinishButton">Continue</button>
+            <button id="gotosurveybutton" name="gotosurveybutton" class="button uiFinishButton">Continue</button>
         </form>
+-->
     </div>
 </body>
 </html>

@@ -46,6 +46,7 @@ function checkCol(dev,purpose) {
 
 function checkRow(dev, status, flag) {
     var currentStatus = document.getElementById(dev+'prs').checked;
+    //alert(currentStatus);
     var checkboxes = document.getElementsByClassName(dev);
     //alert(currentStatus);
     if (flag) {

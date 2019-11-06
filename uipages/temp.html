@@ -1,0 +1,1101 @@
+<div id="DATPintroui" style="display: none">
+            <div class="title">
+                <button class="homebutton" onclick="document.getElementById('DATPintroui').style.display='none';document.getElementById('DAstoragesharing').style.display='block';"></button>
+				<div style="text-align: center;margin-top:16px;">Settings for Third Party Sharing</div>
+			</div>
+                        
+            <div class="settings">
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DATPintroui').style.display='none';document.getElementById('DATPdsmui').style.display='block';currentMenu='DATPse'>
+                    <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                </div>
+                <div class="uifixtext" style="margin-top: 10px;">
+                    Manage IoT device access to the data collected by other IoT devices in your home.
+                </div>
+
+                <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DATPintroui').style.display='none';document.getElementById('DATPdusgui').style.display='block';currentMenu='DATPse'>
+                    <strong>Data Usage</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
+                </div>
+                <div class="uifixtext" style="margin-top:10px;">
+                    Manage long-term use of data collected in your home.
+                </div>
+            </div>
+        </div>
+		
+		<div id="DATPdsmui" style="display: none">
+            <div class="title">
+                <button class="homebutton" onclick="document.getElementById('DATPdsmui').style.display='none';document.getElementById('DATPintroui').style.display='block';"></button>
+				<div style="float:left;margin-left:10px;margin-top:16px;">Device & Sensor Management</div>
+            </div>
+			<div class="settingsWithScroll">
+				<div class="uifixtext">
+                    <p>Expand to set permissions for information collected by who (which device) and for what purpose.</p>
+                </div>
+
+                <div class="devicecontainer">
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPse')">
+                        <div class="narrowmenuicon"><img src="../icons/1.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenutext">
+                            Home Security System
+                            <img id="DATPseArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+                    <div id="DATPse" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPsedata">
+                            <tr>
+                                <th><strong>Data from your Home Security System can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPse','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPse','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPse','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPse','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:38px;font-size:14px;padding:5px 1px" id="DATPseAllButton" onclick="checkAll('DATPse')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsese" id="DATPseseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsese" id="DATPseseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsese" id="DATPseseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsese" id="DATPsesealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPseseall" onclick="checkRow('DATPsese',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsere" id="DATPsereprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsere" id="DATPsereloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsere" id="DATPsereope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsere" id="DATPserealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsereall" onclick="checkRow('DATPsere',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsehv" id="DATPsehvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsehv" id="DATPsehvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsehv" id="DATPsehvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsehv" id="DATPsehvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsehvall" onclick="checkRow('DATPsehv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsewm" id="DATPsewmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsewm" id="DATPsewmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsewm" id="DATPsewmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsewm" id="DATPsewmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsewmall" onclick="checkRow('DATPsewm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsels" id="DATPselsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsels" id="DATPselsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsels" id="DATPselsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsels" id="DATPselsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPselsall" onclick="checkRow('DATPsels',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsesa" id="DATPsesaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsesa" id="DATPsesaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsesa" id="DATPsesaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsesa" id="DATPsesaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsesaall" onclick="checkRow('DATPsesa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsetv" id="DATPsetvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsetv" id="DATPsetvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsetv" id="DATPsetvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsetv" id="DATPsetvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsetvall" onclick="checkRow('DATPsetv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsecl" id="DATPseclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsecl" id="DATPseclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsecl" id="DATPseclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsecl" id="DATPseclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPseclall" onclick="checkRow('DATPsecl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPre')">
+                        <div class="narrowmenuicon"><img src="../icons/2.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenutext">
+                            Refrigerator
+                            <img id="DATPreArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPre" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPredata">
+                            <tr>
+                                <th><strong>Data from your Refrigerator can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPre','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPre','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPre','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPre','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPreAllButton" onclick="checkAll('DATPre')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrere" id="DATPrereprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrere" id="DATPrereloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrere" id="DATPrereope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrere" id="DATPrerealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPrereall" onclick="checkRow('DATPrere',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrese" id="DATPreseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrese" id="DATPreseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrese" id="DATPreseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrese" id="DATPresealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPreseall" onclick="checkRow('DATPrese',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrehv" id="DATPrehvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrehv" id="DATPrehvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrehv" id="DATPrehvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrehv" id="DATPrehvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPrehvall" onclick="checkRow('DATPrehv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrewm" id="DATPrewmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrewm" id="DATPrewmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrewm" id="DATPrewmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrewm" id="DATPrewmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPrewmall" onclick="checkRow('DATPrewm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrels" id="DATPrelsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrels" id="DATPrelsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrels" id="DATPrelsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrels" id="DATPrelsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPrelsall" onclick="checkRow('DATPrels',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPresa" id="DATPresaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPresa" id="DATPresaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPresa" id="DATPresaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPresa" id="DATPresaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPresaall" onclick="checkRow('DATPresa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPretv" id="DATPretvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPretv" id="DATPretvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPretv" id="DATPretvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPretv" id="DATPretvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPretvall" onclick="checkRow('DATPretv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrecl" id="DATPreclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrecl" id="DATPreclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrecl" id="DATPreclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPrecl" id="DATPreclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPreclall" onclick="checkRow('DATPrecl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPhv')">
+                        <div class="narrowmenuicon"><img src="../icons/3.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            HVAC
+                            <img id="DATPhvArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPhv" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPhvdata">
+                            <tr>
+                                <th><strong>Data from your HVAC can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPhv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPhv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPhv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPhv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPhvAllButton" onclick="checkAll('DATPhv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvhv" id="DATPhvhvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvhv" id="DATPhvhvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvhv" id="DATPhvhvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvhv" id="DATPhvhvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvhvall" onclick="checkRow('DATPhvhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvse" id="DATPhvseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvse" id="DATPhvseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvse" id="DATPhvseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvse" id="DATPhvsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvseall" onclick="checkRow('DATPhvse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvre" id="DATPhvreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvre" id="DATPhvreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvre" id="DATPhvreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvre" id="DATPhvrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvreall" onclick="checkRow('DATPhvre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvwm" id="DATPhvwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvwm" id="DATPhvwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvwm" id="DATPhvwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvwm" id="DATPhvwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvwmall" onclick="checkRow('DATPhvwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvls" id="DATPhvlsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvls" id="DATPhvlsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvls" id="DATPhvlsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvls" id="DATPhvlsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvlsall" onclick="checkRow('DATPhvls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvsa" id="DATPhvsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvsa" id="DATPhvsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvsa" id="DATPhvsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvsa" id="DATPhvsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvsaall" onclick="checkRow('DATPhvsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvtv" id="DATPhvtvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvtv" id="DATPhvtvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvtv" id="DATPhvtvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvtv" id="DATPhvtvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvtvall" onclick="checkRow('DATPhvtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvcl" id="DATPhvclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvcl" id="DATPhvclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvcl" id="DATPhvclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPhvcl" id="DATPhvclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPhvclall" onclick="checkRow('DATPhvcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPwm')">
+                        <div class="narrowmenuicon"><img src="../icons/4.png" style="width:25px;height:25px;float:left"></div>
+                        <div class="narrowmenutext">
+                            Washer
+                            <img id="DATPwmArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div></div>
+
+                    <div id="DATPwm" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPwmdata">
+                            <tr>
+                                <th><strong>Data from your wahcing machine can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPwm','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPwm','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPwm','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPwm','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip" onclick="checkAll('DATPwm')"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPwmAllButton">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmwm" id="DATPwmwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmwm" id="DATPwmwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmwm" id="DATPwmwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmwm" id="DATPwmwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmwm',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmwmall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmse" id="DATPwmseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmse" id="DATPwmseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmse" id="DATPwmseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmse" id="DATPwmsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmse',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmseall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmre" id="DATPwmreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmre" id="DATPwmreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmre" id="DATPwmreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmre" id="DATPwmrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmre',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmreall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmhv" id="DATPwmhvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmhv" id="DATPwmhvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmhv" id="DATPwmhvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmhv" id="DATPwmhvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmhv',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmhvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmls" id="DATPwmlsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmls" id="DATPwmlsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmls" id="DATPwmlsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmls" id="DATPwmlsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmls',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmlsall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmsa" id="DATPwmsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmsa" id="DATPwmsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmsa" id="DATPwmsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmsa" id="DATPwmsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmsa',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmsaall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmtv" id="DATPwmtvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmtv" id="DATPwmtvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmtv" id="DATPwmtvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmtv" id="DATPwmtvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px" onclick="checkRow('DATPwmtv',true,true)"><div class="tooltip"><button class="allbutton" id="DATPwmtvall">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmcl" id="DATPwmclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmcl" id="DATPwmclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmcl" id="DATPwmclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPwmcl" id="DATPwmclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPwmclall" onclick="checkRow('DATPwmcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPls')">
+                        <div class="narrowmenuicon"><img src="../icons/5.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Lights
+                            <img id="DATPlsArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPls" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPlsdata">
+                            <tr>
+                                <th><strong>Data from your Lights can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPls','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPls','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPls','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPls','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPlsAllButton" onclick="checkAll('DATPls')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsls" id="DATPlslsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsls" id="DATPlslsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsls" id="DATPlslsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsls" id="DATPlslsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlslsall" onclick="checkRow('DATPlsls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsse" id="DATPlsseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsse" id="DATPlsseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsse" id="DATPlsseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsse" id="DATPlssealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlsseall" onclick="checkRow('DATPlsse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsre" id="DATPlsreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsre" id="DATPlsreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsre" id="DATPlsreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlsre" id="DATPlsrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlsreall" onclick="checkRow('DATPlsre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlshv" id="DATPlshvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlshv" id="DATPlshvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlshv" id="DATPlshvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlshv" id="DATPlshvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlshvall" onclick="checkRow('DATPlshv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlswm" id="DATPlswmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlswm" id="DATPlswmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlswm" id="DATPlswmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlswm" id="DATPlswmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlswmall" onclick="checkRow('DATPlswm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlssa" id="DATPlssaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlssa" id="DATPlssaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlssa" id="DATPlssaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlssa" id="DATPlssaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlssaall" onclick="checkRow('DATPlssa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlstv" id="DATPlstvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlstv" id="DATPlstvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlstv" id="DATPlstvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlstv" id="DATPlstvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlstvall" onclick="checkRow('DATPlstv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlscl" id="DATPlsclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlscl" id="DATPlsclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlscl" id="DATPlsclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlscl" id="DATPlsclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlsclall" onclick="checkRow('DATPlscl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPsa')">
+                        <div class="narrowmenuicon"><img src="../icons/6.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Smart Assistant
+                            <img id="DATPsaArrow" src="../images/arrowright.png" style="height:18px;float:right;"></div>
+                    </div>
+
+                    <div id="DATPsa" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPsadata">
+                            <tr>
+                                <th><strong>Data from your Smart Assistant can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPsa','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPsa','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPsa','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPsa','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPsaAllButton" onclick="checkAll('DATPsa')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsasa" id="DATPsasaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsasa" id="DATPsasaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsasa" id="DATPsasaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsasa" id="DATPsasaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsasaall" onclick="checkRow('DATPsasa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsase" id="DATPsaseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsase" id="DATPsaseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsase" id="DATPsaseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsase" id="DATPsasealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsaseall" onclick="checkRow('DATPsase',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsare" id="DATPsareprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsare" id="DATPsareloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsare" id="DATPsareope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsare" id="DATPsarealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsareall" onclick="checkRow('DATPsare',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsahv" id="DATPsahvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsahv" id="DATPsahvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsahv" id="DATPsahvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsahv" id="DATPsahvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsahvall" onclick="checkRow('DATPsahv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsawm" id="DATPsawmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsawm" id="DATPsawmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsawm" id="DATPsawmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsawm" id="DATPsawmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsawmall" onclick="checkRow('DATPsawm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsals" id="DATPsalsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsals" id="DATPsalsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsals" id="DATPsalsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsals" id="DATPsalsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsalsall" onclick="checkRow('DATPsals',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsatv" id="DATPsatvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsatv" id="DATPsatvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsatv" id="DATPsatvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsatv" id="DATPsatvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsatvall" onclick="checkRow('DATPsatv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsacl" id="DATPsaclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsacl" id="DATPsaclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsacl" id="DATPsaclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPsacl" id="DATPsaclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPsaclall" onclick="checkRow('DATPsacl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPtv')">
+                        <div class="narrowmenuicon"><img src="../icons/7.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Smart TV
+                            <img id="DATPtvArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPtv" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPtvdata">
+                            <tr>
+                                <th><strong>Data from your Smart TV can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPtv','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPtv','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPtv','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPtv','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('DATPtv')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvtv" id="DATPtvtvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvtv" id="DATPtvtvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvtv" id="DATPtvtvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvtv" id="DATPtvtvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvtvall" onclick="checkRow('DATPtvtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvse" id="DATPtvseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvse" id="DATPtvseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvse" id="DATPtvseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvse" id="DATPtvsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvseall" onclick="checkRow('DATPtvse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvre" id="DATPtvreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvre" id="DATPtvreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvre" id="DATPtvreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvre" id="DATPtvrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvreall" onclick="checkRow('DATPtvre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvhv" id="DATPtvhvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvhv" id="DATPtvhvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvhv" id="DATPtvhvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvhv" id="DATPtvhvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvhvall" onclick="checkRow('DATPtvhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvwm" id="DATPtvwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvwm" id="DATPtvwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvwm" id="DATPtvwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvwm" id="DATPtvwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvwmall" onclick="checkRow('DATPtvwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvls" id="DATPtvlsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvls" id="DATPtvlsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvls" id="DATPtvlsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvls" id="DATPtvlsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvlsall" onclick="checkRow('DATPtvls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvsa" id="DATPtvsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvsa" id="DATPtvsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvsa" id="DATPtvsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvsa" id="DATPtvsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvsaall" onclick="checkRow('DATPtvsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvcl" id="DATPtvclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvcl" id="DATPtvclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvcl" id="DATPtvclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPtvcl" id="DATPtvclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPtvclall" onclick="checkRow('DATPtvcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPcl')">
+                        <div class="narrowmenuicon"><img src="../icons/8.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Alarm Clock
+                            <img id="DATPclArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPcl" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPcldata">
+                            <tr>
+                                <th><strong>Data from your Alarm Clock can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPcl','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPcl','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPcl','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPcl','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="lsAllButton" onclick="checkAll('DATPcl')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>The device itself</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclcl" id="DATPclclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclcl" id="DATPclclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclcl" id="DATPclclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclcl" id="DATPclclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclclall" onclick="checkRow('DATPclcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclse" id="DATPclseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclse" id="DATPclseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclse" id="DATPclseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclse" id="DATPclsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclseall" onclick="checkRow('DATPclse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclre" id="DATPclreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclre" id="DATPclreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclre" id="DATPclreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclre" id="DATPclrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclreall" onclick="checkRow('DATPclre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclhv" id="DATPclhvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclhv" id="DATPclhvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclhv" id="DATPclhvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclhv" id="DATPclhvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclhvall" onclick="checkRow('DATPclhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclwm" id="DATPclwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclwm" id="DATPclwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclwm" id="DATPclwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclwm" id="DATPclwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclwmall" onclick="checkRow('DATPclwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclls" id="DATPcllsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclls" id="DATPcllsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclls" id="DATPcllsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclls" id="DATPcllsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcllsall" onclick="checkRow('DATPclls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclsa" id="DATPclsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclsa" id="DATPclsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclsa" id="DATPclsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPclsa" id="DATPclsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPclsaall" onclick="checkRow('DATPclsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcltv" id="DATPcltvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcltv" id="DATPcltvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcltv" id="DATPcltvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcltv" id="DATPcltvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcltvall" onclick="checkRow('DATPcltv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPlo')" style="margin-top:20px;">
+                        <div class="narrowmenuicon"><img src="../icons/9.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Location Sensor
+                            <img id="DATPloArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPlo" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPlodata">
+                            <tr>
+                                <th><strong>Data from your Location Sensor can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPlo','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPlo','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPlo','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPlo','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPloAllButton" onclick="checkAll('DATPlo')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlose" id="DATPloseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlose" id="DATPloseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlose" id="DATPloseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlose" id="DATPlosealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPloseall" onclick="checkRow('DATPlose',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlore" id="DATPloreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlore" id="DATPloreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlore" id="DATPloreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlore" id="DATPlorealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPloreall" onclick="checkRow('DATPlore',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlohv" id="DATPlohvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlohv" id="DATPlohvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlohv" id="DATPlohvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlohv" id="DATPlohvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlohvall" onclick="checkRow('DATPlohv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlowm" id="DATPlowmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlowm" id="DATPlowmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlowm" id="DATPlowmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlowm" id="DATPlowmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlowmall" onclick="checkRow('DATPlowm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlols" id="DATPlolsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlols" id="DATPlolsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlols" id="DATPlolsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlols" id="DATPlolsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlolsall" onclick="checkRow('DATPlols',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlosa" id="DATPlosaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlosa" id="DATPlosaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlosa" id="DATPlosaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlosa" id="DATPlosaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlosaall" onclick="checkRow('DATPlosa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlotv" id="DATPlotvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlotv" id="DATPlotvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlotv" id="DATPlotvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlotv" id="DATPlotvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPlotvall" onclick="checkRow('DATPlotv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlocl" id="DATPloclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlocl" id="DATPloclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlocl" id="DATPloclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPlocl" id="DATPloclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPloclall" onclick="checkRow('DATPlocl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPca')">
+                        <div class="narrowmenuicon"><img src="../icons/10.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Camera
+                            <img id="DATPcaArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPca" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPcadata">
+                            <tr>
+                                <th><strong>Data from your Camera can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPca','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPca','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPca','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPca','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPcaAllButton" onclick="checkAll('DATPca')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcase" id="DATPcaseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcase" id="DATPcaseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcase" id="DATPcaseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcase" id="DATPcasealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcaseall" onclick="checkRow('DATPcase',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcare" id="DATPcareprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcare" id="DATPcareloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcare" id="DATPcareope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcare" id="DATPcarealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcareall" onclick="checkRow('DATPcare',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcahv" id="DATPcahvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcahv" id="DATPcahvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcahv" id="DATPcahvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcahv" id="DATPcahvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcahvall" onclick="checkRow('DATPcahv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcawm" id="DATPcawmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcawm" id="DATPcawmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcawm" id="DATPcawmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcawm" id="DATPcawmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcawmall" onclick="checkRow('DATPcawm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcals" id="DATPcalsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcals" id="DATPcalsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcals" id="DATPcalsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcals" id="DATPcalsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcalsall" onclick="checkRow('DATPcals',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcasa" id="DATPcasaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcasa" id="DATPcasaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcasa" id="DATPcasaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcasa" id="DATPcasaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcasaall" onclick="checkRow('DATPcasa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcatv" id="DATPcatvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcatv" id="DATPcatvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcatv" id="DATPcatvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcatv" id="DATPcatvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcatvall" onclick="checkRow('DATPcatv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcacl" id="DATPcaclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcacl" id="DATPcaclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcacl" id="DATPcaclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPcacl" id="DATPcaclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPcaclall" onclick="checkRow('DATPcacl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPmp')">
+                        <div class="narrowmenuicon"><img src="../icons/11.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Microphone
+                            <img id="DATPmpArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPmp" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPmpdata">
+                            <tr>
+                                <th><strong>Data from your Microphone can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPmp','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPmp','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPmp','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPmp','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPmpAllButton" onclick="checkAll('DATPmp')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpse" id="DATPmpseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpse" id="DATPmpseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpse" id="DATPmpseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpse" id="DATPmpsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmpseall" onclick="checkRow('DATPmpse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpre" id="DATPmpreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpre" id="DATPmpreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpre" id="DATPmpreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpre" id="DATPmprealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmpreall" onclick="checkRow('DATPmpre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmphv" id="DATPmphvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmphv" id="DATPmphvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmphv" id="DATPmphvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmphv" id="DATPmphvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmphvall" onclick="checkRow('DATPmphv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpwm" id="DATPmpwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpwm" id="DATPmpwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpwm" id="DATPmpwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpwm" id="DATPmpwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmpwmall" onclick="checkRow('DATPmpwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpls" id="DATPmplsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpls" id="DATPmplsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpls" id="DATPmplsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpls" id="DATPmplsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmplsall" onclick="checkRow('DATPmpls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpsa" id="DATPmpsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpsa" id="DATPmpsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpsa" id="DATPmpsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpsa" id="DATPmpsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmpsaall" onclick="checkRow('DATPmpsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmptv" id="DATPmptvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmptv" id="DATPmptvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmptv" id="DATPmptvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmptv" id="DATPmptvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmptvall" onclick="checkRow('DATPmptv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpcl" id="DATPmpclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpcl" id="DATPmpclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpcl" id="DATPmpclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPmpcl" id="DATPmpclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPmpclall" onclick="checkRow('DATPmpcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="narrowmenu" onclick="dropdownFunction('DATPsw')">
+                        <div class="narrowmenuicon"><img src="../icons/12.png" style="width:25px;height:25px;float:left;"></div>
+                        <div class="narrowmenutext">
+                            Smart Phone/Watch
+                            <img id="DATPswArrow" src="../images/arrowright.png" style="height:18px;float:right;">
+                        </div>
+                    </div>
+
+                    <div id="DATPsw" class="dropdown" style="display: none">
+						<div style="padding:10px 10px;font-weight:bold"></div>
+                        <table class="table" id="DATPswdata">
+                            <tr>
+                                <th><strong>Data from your Smart Phone/Watch can be used by</strong></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/001.png);background-size: 100% 100%;" onclick="checkCol('DATPsw','prs')"><span class="tooltiptext">to detect whether you are home</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/002.png);background-size: 100% 100%;" onclick="checkCol('DATPsw','loc')"><span class="tooltiptext">to detect your location in house</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/003.png);background-size: 100% 100%;" onclick="checkCol('DATPsw','ope')"><span class="tooltiptext">to automate its operation</span></div></th>
+                                <th><div class="tooltip"><input type="button" class="iconbutton" style="background:url(../icons/004.png);background-size: 100% 100%;" onclick="checkCol('DATPsw','alm')"><span class="tooltiptext">to give you timely alerts</span></div></th>
+                                <th><div class="tooltip"><button class="button" style="width:35px;font-size:12px;padding:5px 1px" id="DATPswAllButton" onclick="checkAll('DATPsw')">All</button><span class="tooltiptext">allow/disallow all four purposes</span></div></th>
+                            </tr>
+                            <tr>
+                                <td>Home Security System</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswse" id="DATPswseprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswse" id="DATPswseloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswse" id="DATPswseope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswse" id="DATPswsealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswseall" onclick="checkRow('DATPswse',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Refrigerator</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswre" id="DATPswreprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswre" id="DATPswreloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswre" id="DATPswreope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswre" id="DATPswrealm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswreall" onclick="checkRow('DATPswre',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswhv" id="DATPswhvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswhv" id="DATPswhvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswhv" id="DATPswhvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswhv" id="DATPswhvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswhvall" onclick="checkRow('DATPswhv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Washer</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswwm" id="DATPswwmprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswwm" id="DATPswwmloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswwm" id="DATPswwmope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswwm" id="DATPswwmalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswwmall" onclick="checkRow('DATPswwm',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Lights</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswls" id="DATPswlsprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswls" id="DATPswlsloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswls" id="DATPswlsope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswls" id="DATPswlsalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswlsall" onclick="checkRow('DATPswls',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart Assistant</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswsa" id="DATPswsaprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswsa" id="DATPswsaloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswsa" id="DATPswsaope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswsa" id="DATPswsaalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswsaall" onclick="checkRow('DATPswsa',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Smart TV</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswtv" id="DATPswtvprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswtv" id="DATPswtvloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswtv" id="DATPswtvope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswtv" id="DATPswtvalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswtvall" onclick="checkRow('DATPswtv',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm Clock</td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswcl" id="DATPswclprs"/><span class="tooltiptext">to detect whether you are home</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswcl" id="DATPswclloc"/><span class="tooltiptext">to detect your location in house</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswcl" id="DATPswclope"/><span class="tooltiptext">to automate its operation</span></div></td>
+                                <td><div class="tooltip"><input type="checkbox" class="largerCheckbox DATPswcl" id="DATPswclalm"/><span class="tooltiptext">to give you timely alerts</span></div></td>
+                                <td style="border-left: 2px solid #DCDCDC;margin-left:5px"><div class="tooltip"><button class="allbutton" id="DATPswclall" onclick="checkRow('DATPswcl',true,true)">All</button><span class="tooltiptext">Check/Uncheck this row</span></div></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div><button class="button middle" style="top:5px;margin-left: -30px;height:28px" onclick="document.getElementById('DATPdsmui').style.display='none';document.getElementById('DATPintroui').style.display='block';closeLeftDropdown();">Save</button></div>
+                </div>
+
+			</div>
+
+		</div>
+        
+        <div id="DATPdusgui" style="display: none">
+            <div class="title">
+                <button class="homebutton" onclick="document.getElementById('DATPdusgui').style.display='none';document.getElementById('DATPintroui').style.display='block';"></button>
+                <div style="float:left;margin-left:26px;margin-top:16px;">Data Usage for 3rd Party Sharing</div>
+            </div>
+
+            <div class="settings" style="font-size:15px">
+                <div class="uifixtext">
+                    <h2>Data Usage</h2>
+                    Manage what happens with the shared information.
+                </div>
+
+                <div class="radiobox">
+                    Optimize services<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                </div>
+                <div class="radiobox">
+                    Behavioral insights<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                </div>
+                <div class="radiobox">
+                    Recommendation<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                </div>
+                <div class="radiobox">
+                    Other uses<label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                </div>
+
+                <div><button class="button middle" style="top:20px;height:28px" onclick="document.getElementById('DATPdusgui').style.display='none';document.getElementById('DATPintroui').style.display='block';">Save</button></div>
+
+            </div>
+        </div>
+        

@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="main.css">
     <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
     <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+        // Warning before leaving the page (back button, or outgoinglink)
+        window.onbeforeunload = function() {
+           return "Do you really want to leave our study?";
+           //if we return nothing here (just calling return;) then there will be no pop-up question at all
+           //return;
+        };
+//        window.addEventListener("beforeunload", function (e) {
+//          window.alert("Do you really want to leave our study?");
+//
+//          (e || window.event).returnValue = null;
+//          return null;
+//        });
+    </script>
 </head>
 <body>
 	<?php
@@ -47,7 +61,7 @@
                 <span><h1><strong>Welcome</strong></h1></span>
                 <span><h4>Welcome to the smart home settings User Interface (UI) Study conducted by Clemson University</h4></span>
                 <hr>
-                <p>Dr. Knijnenburg invites you to take part in a research study. Dr. Knijnenburg is a professor at Clemson University. This is a study that aims to test a new User Interface (UI) for smart home users. Your participation in this study will be valued.</p>
+                <p>Dr. Bart Knijnenburg invites you to take part in a research study. Dr. Knijnenburg is a professor at Clemson University. This is a study that aims to test a new User Interface (UI) for smart home users. Your participation in this study will be valued.</p>
 
                 <p>It will take you about 15-20 minutes to complete the four steps of the study:</p>
                 <ol>	
@@ -172,45 +186,51 @@
         <div id="prepage">
             <div>
                 <span><h1><strong>Prepare to Start!</strong></h1></span>
-                <p>Assume you are about to set up a smat home environment, a company designed a mobile app to assist you with the settings. You will be shown the interface, please go through the entire setting interface and make changes according to your preferences.</p>
+                <p>Assume you are about to set up a smart home environment, a company designed a mobile app to assist you with the settings. You will be shown the interface, please go through the entire setting interface and make changes according to your preferences.</p>
                 <hr>
-                <img src="./images/uiscreenshot.png" width="800px">
+                <img src="./images/uiscreenshot.png" width="400px"><img src="./images/uiscreenshot.png" width="400px"><br/>
+                <img src="./images/uiscreenshot.png" width="400px"><img src="./images/uiscreenshot.png" width="400px">
             </div>
             <div>
+
             <?php
-            if(isset($_POST['prepagebutton']))
-            {
-//                $date_clicked = date('Y-m-d H:i:s');;
-//                echo "Time the button was clicked: " . $date_clicked . "<br>";
-                $mysqli->query("UPDATE uistudy SET time2 = now() WHERE (sessionid = '$sessionId')");
-                
-                $condition = rand(1,1);
-                console.log("$condition");
-                switch ($condition) {
-                    case 1:
-                        header("Location: uipages/ui1allOff.php");
-                        break;
-                    case 2:
-                        header("Location: uipages/ui1allOff.php");
-                        break;
-//                    case 3:
-//                        echo "3";
-////                        header("Location: anotherDirectory/anotherFile.php");
+//            if(isset($_POST['prepagebutton']))
+//            {
+////                $date_clicked = date('Y-m-d H:i:s');;
+////                echo "Time the button was clicked: " . $date_clicked . "<br>";
+//                $mysqli->query("UPDATE uistudy SET time2 = now() WHERE (sessionid = '$sessionId')");
+//                
+//                $condition = rand(1,1);
+//                console.log("$condition");
+//                switch ($condition) {
+//                    case 1:
+//                        header("Location: uipages/ui1allOff.php");
 //                        break;
-//                    case 4:
-//                        echo "4";
+//                    case 2:
+//                        header("Location: uipages/ui1allOff.php");
 //                        break;
-                    default:
-                        echo "error!";
-                }        
-            } ?>
+////                    case 3:
+////                        echo "3";
+//////                        header("Location: anotherDirectory/anotherFile.php");
+////                        break;
+////                    case 4:
+////                        echo "4";
+////                        break;
+//                    default:
+//                        echo "error!";
+//                }        
+//            } 
+                ?>
+
+<!--
             <form action="" method="POST">
                 <button name="prepagebutton" class="button right">Start!</button>
             </form>
+-->
 
 
 
-<!--                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>-->
+                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>
 <!--                <button class="button right" onclick="location.href = './uipages/ui1AllOff.php'";><strong>Start!</strong></button>-->
             </div>
             

@@ -107,18 +107,6 @@ body {
     line-height: 18px;
 }
 
-.homebutton {
-    background-image: url('./icons/home.png');
-    background-color: #ff9400;
-    background-size: 28px 28px;
-    height: 28px;
-    width: 28px;
-    margin: 10px;
-    border: none;
-    float: left;
-    cursor: pointer;
-}
-
 .settings {
     border-width:0px;
     position:absolute;
@@ -358,16 +346,16 @@ tr {
 }
 
 .button {
-    border: 0px solid;
-    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+/*    border: none;*/
+    box-shadow: 1px 1px #D3D3D3;
+    border-radius: 8px;
+    color: white;
     background-color: #ff9400;
     background-repeat: no-repeat;
-    color: white;
-    font-size: 16px;
     text-align: center;
     cursor: pointer;
-    padding: 5px 5px;
-    width: 60px;
+    width: 80px;
 }
 
 .button:hover {
@@ -382,21 +370,40 @@ tr {
     clear: both;
 }
 
+.homebutton {
+    box-shadow: 1px 1px 0px 0px #899599;
+	border-radius: 5px;
+	border: 1px solid #C0C0C0;
+    background-image: url('./icons/home.png');
+    background-color: rgba(255,165,0,0.9);
+    background-size: 100% 100%;
+    height: 30px;
+    width: 30px;
+    margin: 11px 8px;
+    float: left;
+    cursor: pointer;
+}
+.homebutton:hover {
+    background-color: #A9A9A9;
+}
+
 .allbutton {
-    border: 0px solid;
-    border-radius: 10px;
-    background-color: #DCDCDC;
+    box-shadow: 1px 1px 0px 0px #899599;
+	border-radius:5px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+    background-color: rgba(255,165,0,0.6);
     color: black;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     cursor: pointer;
     padding: 5px 1px;
     width: 30px;
-    margin-left:5px
+    margin-left:5px;
 }
 
 .allbutton:hover {
-    background-color: rgba(53, 52, 52, 0.8);
+    background-color: #DCDCDC;
 }
 
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
@@ -404,6 +411,17 @@ tr {
 .w3-display-right{position:relative; top:280px; left: 746px; transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
 .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
 .w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+
+
+.iconbutton {
+    width:28px;
+    height:28px;
+    cursor:pointer;
+    box-shadow: 1px 1px 0px 0px #899599;
+	border-radius:5px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+}
 
 #surveyHeader {
     background-color: #FFF;
@@ -495,14 +513,9 @@ input:checked + .slider:before {
 
 .uiFinishButton {
     float:right;
-    border: 1px solid black;
     padding: 5px 10px;
     background-position: 10px;
-    background-color: #a4c63b;
-    background-repeat: no-repeat;
-    text-align: center;
-    cursor: pointer;
-    cursor: hand
+    background-color: #5cb85c;
 }
 
 .uiFinishButton:hover {
@@ -513,24 +526,12 @@ input:checked + .slider:before {
     visibility:hidden;
     position:absolute;
     z-index:999;
-    width: 22%;
+    width: 16%;
     height:auto;
-    margin-top: 35%;
-    margin-left: 68%;
-    padding: 10px;
+    top: 35%;
+    left: 65%;
+    padding: 15px;
     color: white;
     background-color:#FFA500;
-}
-
-.uiWarn {
-    visibility: hidden;
-    position:absolute;
-    z-index:1000;
-    width: 22%;
-    height:auto;
-    margin-top: 35%;
-    margin-left: 68%;
-    padding: 10px;
-    color: white;
-    background-color:#FFA500;
+    border-radius: 10px;
 }

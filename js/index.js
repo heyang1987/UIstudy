@@ -49,7 +49,7 @@ function handleChange(checkbox) {
 }
 
 $(document).ready(function(){
-    $('#introduction, #consentBody, #preIntro, #prepage').hide();
+    $('#introduction, #consentBody, #preIntro').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
     var consentbutton = document.getElementById('consentbutton');
@@ -85,38 +85,40 @@ $(document).ready(function(){
         prepage.style.display = 'block';        
     });
     
-//    $("#prepagebutton").click(function() {
-//        //alert("start clicked!");
-//        var rdnum = Math.floor(Math.random() * 1);
-//        switch (rdnum){
-//            case(0):
-//                document.location.href = './uipages/ui1allOff.php';
-//                break;
-//            case(1):
-//                document.location.href = './uipages/ui1allOn.php';
-//                break;
-//            case(2):
-//                document.location.href = './uipages/ui1oneRule.php';
-//                break;
-//            case(3):
-//                document.location.href = './uipages/ui2AllOn.php';
-//                break;
-//            case(4):
-//                document.location.href = './uipages/ui2AllOff.php';
-//                break;
-//            case(5):
-//                document.location.href = './uipages/ui2OneRule.php';
-//                break;
-//            case(6):
-//                document.location.href = './uipages/ui1Profiles.php';
-//                break;
-//            case(7):
-//                document.location.href = './uipages/ui1AllOff.php';
-//                break;
-//            default:
-//                window.alert("error!");
-//        }
-//    });
+    $("#prepagebutton").click(function() {
+//        alert("start clicked!");
+        window.onbeforeunload = null;
+        var rdnum = Math.floor(Math.random() * 8) + 1;
+        //window.alert(rdnum);
+        switch (rdnum){
+            case(1):
+                document.location.href = './uipages/ui1allOff.php';
+                break;
+            case(2):
+                document.location.href = './uipages/ui2allOff.php';
+                break;
+            case(3):
+                document.location.href = './uipages/ui1allOn.php';
+                break;
+            case(4):
+                document.location.href = './uipages/ui2allOn.php';
+                break;
+            case(5):
+                document.location.href = './uipages/ui1oneRule.php';
+                break;
+            case(6):
+                document.location.href = './uipages/ui2oneRule.php';
+                break;
+            case(7):
+                document.location.href = './uipages/ui1profile.php';
+                break;
+            case(8):
+                document.location.href = './uipages/ui2profile.php';
+                break;
+            default:
+                window.alert("error!");
+        }
+    });
 
     audio[0].onended = function() {showDivs(1);frontline = 0;};
     audio[1].onended = function() {showDivs(2);frontline = 1;};

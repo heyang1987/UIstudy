@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function(){
-    $('#surveypage1, #surveypage2, #surveypage3, #surveypage4, #surveypage5, #surveypage6, #surveypage7, #surveypage8, #surveypage9, #surveypage10, #surveypage11, #surveypage12, #surveypage13, #surveypage14, #end').hide();
+    $('#surveypage1, #surveypage2, #surveypage3, #surveypage4, #surveypage5, #surveypage6, #surveypage7, #surveypage8, #surveypage9, #surveypage10, #surveypage11, #surveypage12, #surveypage13, #surveypage14').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
     var consentbutton = document.getElementById('consentbutton');
@@ -16,30 +16,38 @@ $(document).ready(function(){
         document.getElementById('barP1').classList.add("active");
     });
     
-    
-    $("#surveypage14button").click(function(){
-        if (typeof $("input[type=radio][name='gender']:checked").val()!=='undefined' && typeof $("input[type=radio][name='age']:checked").val()!=='undefined' && typeof $("input[type=radio][name='race']:checked").val()!=='undefined' && typeof $("input[type=radio][name='edu']:checked").val()!=='undefined' && typeof $("input[type=radio][name='housing']:checked").val()!=='undefined' && typeof $("input[type=radio][name='income']:checked").val()!=='undefined'){
-            document.getElementById('surveypage14').style.display = 'none';
-            document.getElementById('statusbar').style.display = 'none';
-            document.getElementById('end').style.display = 'block';
-            //$("html, body").animate({ scrollTop: 0 }, "slow");
-            // Store all the radio values and submit to the database
-//            
-//            alert("gender: "+document.querySelector('input[name="gender"]:checked').value);
-//            alert("trust1: "+document.querySelector('input[name="trust1"]:checked').value);
-//            alert("trust2: "+document.querySelector('input[name="trust2"]:checked').value);
-//            alert("trust3: "+document.querySelector('input[name="trust3"]:checked').value);
-//            alert("trust4: "+document.querySelector('input[name="trust4"]:checked').value);
-//            alert("trust5: "+document.querySelector('input[name="trust5"]:checked').value);
-//            alert("trust6: "+document.querySelector('input[name="trust6"]:checked').value);
-//            alert("trust7: "+document.querySelector('input[name="trust7"]:checked').value);
-//            alert("trust8: "+document.querySelector('input[name="trust8"]:checked').value);
+    document.getElementById("surveypage14").addEventListener('click', function(event) {
+        document.getElementById('surveypage14button').disabled = true;
+        if( $("input[name='gender']:checked").val() && $("input[name='age']:checked").val() && $("input[name='gender']:checked").val() && $("input[name='race']:checked").val() && $("input[name='edu']:checked").val() && $("input[name='housing']:checked").val() && $("input[name='income']:checked").val() ) {
+            window.onbeforeunload = null;
+            document.getElementById('surveypage14button').disabled = false;
         }
-        else{
-            alert("Please choose your answers for all the questions!");
-        }
-            
     });
+    
+    
+//    $("#surveypage14button").click(function(){
+//        if (typeof $("input[type=radio][name='gender']:checked").val()!=='undefined' && typeof $("input[type=radio][name='age']:checked").val()!=='undefined' && typeof $("input[type=radio][name='race']:checked").val()!=='undefined' && typeof $("input[type=radio][name='edu']:checked").val()!=='undefined' && typeof $("input[type=radio][name='housing']:checked").val()!=='undefined' && typeof $("input[type=radio][name='income']:checked").val()!=='undefined'){
+//            document.getElementById('surveypage14').style.display = 'none';
+//            document.getElementById('statusbar').style.display = 'none';
+//            //document.getElementById('end').style.display = 'block';
+//            //$("html, body").animate({ scrollTop: 0 }, "slow");
+//            // Store all the radio values and submit to the database
+////            
+////            alert("gender: "+document.querySelector('input[name="gender"]:checked').value);
+////            alert("trust1: "+document.querySelector('input[name="trust1"]:checked').value);
+////            alert("trust2: "+document.querySelector('input[name="trust2"]:checked').value);
+////            alert("trust3: "+document.querySelector('input[name="trust3"]:checked').value);
+////            alert("trust4: "+document.querySelector('input[name="trust4"]:checked').value);
+////            alert("trust5: "+document.querySelector('input[name="trust5"]:checked').value);
+////            alert("trust6: "+document.querySelector('input[name="trust6"]:checked').value);
+////            alert("trust7: "+document.querySelector('input[name="trust7"]:checked').value);
+////            alert("trust8: "+document.querySelector('input[name="trust8"]:checked').value);
+//        }
+//        else{
+//            alert("Please choose your answers for all the questions!");
+//        }
+//            
+//    });
 
     $("#surveypage9button").click(function(){
 //        if (typeof $("input[type=radio][name='knowledge1']:checked").val()!=='undefined' && 
@@ -374,16 +382,39 @@ function fixStepIndicator(n) {
 }
 
 function boldage(el){
+    el.getElementsByTagName("input")[0].checked = true;
+    el.parentNode.parentNode.parentNode.style.borderLeft = "solid 2px green";
+    var radios = el.parentNode.getElementsByTagName('INPUT');
+    for(var i=0; i<radios.length; i++){
+        if(radios[i].type == 'radio'){
+            //turning off any bold for all inputs
+            radios[i].parentNode.style.fontWeight = ''; 
+            radios[i].parentNode.style.color = 'gray'; 
+        }
+    }
+    el.getElementsByTagName("label")[0].style.fontWeight = 'bold';
+}
+
+function boldage2(el){
+//    el.parentNode.style.backgroundColor = "green";
+//    el.parentNode.parentNode.style.backgroundColor = "blue";
+    var j = el.parentNode.parentNode;
+    j.style.borderLeft = "solid 2px green";
+    //el.parentNode.parentNode.parentNode.parentNode.parentNode.borderStyle = "solid 2px red";
+    
     var root = el.parentNode.parentNode.parentNode; //this gets us to the p, which is the parent of all the radio buttons
     var radios = root.getElementsByTagName('INPUT'); //this gets us all inputs
     for(var i=0; i<radios.length; i++){
         //iterate through inputs
         if(radios[i].type == 'radio'){
-            //this is a radio button
-            radios[i].parentNode.style.fontWeight = ''; radios[i].parentNode.style.color = 'gray';    //turning off any bold for all inputs
+            //turning off any bold for all inputs
+            radios[i].parentNode.style.fontWeight = ''; 
+            radios[i].parentNode.style.color = 'gray'; 
+            //radios[i].parentNode.parentNode.style.backgroundColor = 'white'; 
         }
     }
     el.parentNode.style.fontWeight = 'bold';    //go up to the parent of the current item, taking us to its label, then bolding.
     el.parentNode.style.color = 'black';    //go up to the parent of the current item, taking us to its label, then bolding.
+    //el.parentNode.parentNode.style.backgroundColor = "green";
 
 }

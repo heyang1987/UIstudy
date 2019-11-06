@@ -99,14 +99,16 @@ b, strong {
 }
 
 .button,.smallbutton,.disabledSmallbutton,.minibutton {
-/*    border: 1px solid black;*/
-    border: none;
+    border: 1px solid #D3D3D3;
+/*    border: none;*/
+    box-shadow: 1px 1px #D3D3D3;
     border-radius: 8px;
     color: white;
     background-color: #5cb85c;
     background-repeat: no-repeat;
     text-align: center;
     cursor: pointer;
+    width: 80px;
 }
 
 .button:disabled {
@@ -149,23 +151,29 @@ b, strong {
 
 /* Make circles that indicate the steps of the form: */
 .step {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;  
+    background-color: #B6B6B4;
+    border: 1px solid grey;  
     border-radius: 50%;
     display: inline-block;
     opacity: 0.5;
 }
 
-.step.active {
-    background-color: #FF0000;
+.stage {
+    border: 2px solid black;
+}
+
+.active {
+    background-color: #00FFFF;
+    border: 2px solid black;
 }
 
 /* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #00FF00;
+.finish {
+    background-color: #6CC417;
+    border-color: #437C17;
 }
 
 .floatright {
@@ -183,4 +191,34 @@ b, strong {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+table {
+    table-layout: fixed ;
+    width: 90% ;
+    padding: 0px 10px;
+    border-left: solid 2px #D3D3D3;
+}
+
+td {
+    text-align: center; 
+    width: 18% ;
+}
+
+td:hover {
+    background-color: #DCDCDC;
+    cursor: pointer;
+}
+
+.addBox
+{
+	box-shadow: 1px 1px 10px #888888;
+	padding: 0px 10px;
+	float:left;
+	width: 120px;
+}
+
+.question {
+    padding: 0px 10px;
+    border-left: solid 2px #D3D3D3;
 }
