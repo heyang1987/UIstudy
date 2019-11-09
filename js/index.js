@@ -49,7 +49,7 @@ function handleChange(checkbox) {
 }
 
 $(document).ready(function(){
-    $('#introduction, #consentBody, #preIntro').hide();
+    $('#introduction, #consentBody, #preIntro, #attention').hide();
     var welcome = document.getElementById('welcomeBody');
     var consent = document.getElementById('consentBody');
     var consentbutton = document.getElementById('consentbutton');
@@ -82,41 +82,14 @@ $(document).ready(function(){
             audio[i].pause();
         }
         introduction.style.display = 'none';
-        prepage.style.display = 'block';        
+        attention.style.display = 'block';        
     });
     
-    $("#prepagebutton").click(function() {
-//        alert("start clicked!");
-        window.onbeforeunload = null;
-        var rdnum = Math.floor(Math.random() * 8) + 1;
-        //window.alert(rdnum);
-        switch (rdnum){
-            case(1):
-                document.location.href = './uipages/ui1allOff.php';
-                break;
-            case(2):
-                document.location.href = './uipages/ui2allOff.php';
-                break;
-            case(3):
-                document.location.href = './uipages/ui1allOn.php';
-                break;
-            case(4):
-                document.location.href = './uipages/ui2allOn.php';
-                break;
-            case(5):
-                document.location.href = './uipages/ui1oneRule.php';
-                break;
-            case(6):
-                document.location.href = './uipages/ui2oneRule.php';
-                break;
-            case(7):
-                document.location.href = './uipages/ui1profile.php';
-                break;
-            case(8):
-                document.location.href = './uipages/ui2profile.php';
-                break;
-            default:
-                window.alert("error!");
+    document.getElementById("attention").addEventListener('input', function(event) {
+        //window.alert("clicked");
+        document.getElementById('attentionbutton').disabled = true;
+        if( $("input[name='atten2']:checked").val() && $("#atten3").val() ) {
+            document.getElementById('attentionbutton').disabled = false;
         }
     });
 
@@ -160,17 +133,26 @@ function fixStepIndicator(n) {
     x[n].className += ' active';
 }
 
-function boldage(el){
+function boldage2(el){
+//    el.parentNode.style.backgroundColor = "green";
+//    el.parentNode.parentNode.style.backgroundColor = "blue";
+    var j = el.parentNode.parentNode;
+    j.style.borderLeft = "solid 2px green";
+    //el.parentNode.parentNode.parentNode.parentNode.parentNode.borderStyle = "solid 2px red";
+    
     var root = el.parentNode.parentNode.parentNode; //this gets us to the p, which is the parent of all the radio buttons
     var radios = root.getElementsByTagName('INPUT'); //this gets us all inputs
     for(var i=0; i<radios.length; i++){
         //iterate through inputs
         if(radios[i].type == 'radio'){
-            //this is a radio button
-            radios[i].parentNode.style.fontWeight = ''; radios[i].parentNode.style.color = 'gray';    //turning off any bold for all inputs
+            //turning off any bold for all inputs
+            radios[i].parentNode.style.fontWeight = ''; 
+            radios[i].parentNode.style.color = 'gray'; 
+            //radios[i].parentNode.parentNode.style.backgroundColor = 'white'; 
         }
     }
     el.parentNode.style.fontWeight = 'bold';    //go up to the parent of the current item, taking us to its label, then bolding.
     el.parentNode.style.color = 'black';    //go up to the parent of the current item, taking us to its label, then bolding.
+    //el.parentNode.parentNode.style.backgroundColor = "green";
 
 }

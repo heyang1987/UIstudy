@@ -9,20 +9,6 @@
     <link rel="stylesheet" href="main.css">
     <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
     <script type="text/javascript" src="./js/index.js"></script>
-    <script>
-        // Warning before leaving the page (back button, or outgoinglink)
-        window.onbeforeunload = function() {
-           return "Do you really want to leave our study?";
-           //if we return nothing here (just calling return;) then there will be no pop-up question at all
-           //return;
-        };
-//        window.addEventListener("beforeunload", function (e) {
-//          window.alert("Do you really want to leave our study?");
-//
-//          (e || window.event).returnValue = null;
-//          return null;
-//        });
-    </script>
 </head>
 <body>
 	<?php
@@ -72,7 +58,7 @@
                 </ol>
             
                     
-                <strong>It is better to use a desktop or a laptop to do this study. Also, using a mouse is recommended since there will be a lot of clicking. Thank you!</strong>
+                <strong>It is better to use a desktop or a laptop to do this study. Also, using a mouse or a trackpad is recommended since there will be a lot of clicking. Thank you!</strong>
             </div>
             <div class="bottomrow">
                 <button id="welcomeButton" class="button right"><strong>Continue</strong></button>
@@ -177,63 +163,35 @@
             </div>
             
             <div class="bottomrow">
-<!--                <button id="introductionbutton" class="button" type="button" disabled><strong>Continue</strong></button>-->
-<!--                <button id="introductionbutton" class="button"><strong>Continue</strong></button>-->
                 <button id="introductionbutton" class="button right" type="button"><strong>Continue</strong></button>
             </div>
             
         </div>
-        <div id="prepage">
-            <div>
-                <span><h1><strong>Prepare to Start!</strong></h1></span>
-                <p>Assume you are about to set up a smart home environment, a company designed a mobile app to assist you with the settings. You will be shown the interface, please go through the entire setting interface and make changes according to your preferences.</p>
+        
+        <div id="attention">
+            <h2>Questions</h2>
+            <h4>Please answer the following and select the option that is true about the introduction you just watched.</h4>
+            <form action="prepage.php" method="POST">
+                <div class="question">
+                    1. Which of the following smart device was <b>not</b> introduced in previous introduction?
+                    <tr>
+                        <br/><label for='atten21'><input type='radio' id='atten21' name='atten2' value='-2' onclick='boldage2(this)'/> Smart TV </label>
+                        <br/><label for='atten22'><input type='radio' id='atten22' name='atten2' value='-1' onclick='boldage2(this)'/> Smart Speaker </label>
+                        <br/><label for='atten23'><input type='radio' id='atten23' name='atten2' value='0' onclick='boldage2(this)'/> Smart refrigerator </label>
+                        <br/><label for='atten24'><input type='radio' id='atten24' name='atten2' value='1' onclick='boldage2(this)'/> Smart HVAC </label>
+                        <br/><label for='atten25'><input type='radio' id='atten25' name='atten2' value='2' onclick='boldage2(this)'/> Smart Alarm Clock </label>  
+                    </tr>
+                </div>
                 <hr>
-                <img src="./images/uiscreenshot.png" width="400px"><img src="./images/uiscreenshot.png" width="400px"><br/>
-                <img src="./images/uiscreenshot.png" width="400px"><img src="./images/uiscreenshot.png" width="400px">
-            </div>
-            <div>
-
-            <?php
-//            if(isset($_POST['prepagebutton']))
-//            {
-////                $date_clicked = date('Y-m-d H:i:s');;
-////                echo "Time the button was clicked: " . $date_clicked . "<br>";
-//                $mysqli->query("UPDATE uistudy SET time2 = now() WHERE (sessionid = '$sessionId')");
-//                
-//                $condition = rand(1,1);
-//                console.log("$condition");
-//                switch ($condition) {
-//                    case 1:
-//                        header("Location: uipages/ui1allOff.php");
-//                        break;
-//                    case 2:
-//                        header("Location: uipages/ui1allOff.php");
-//                        break;
-////                    case 3:
-////                        echo "3";
-//////                        header("Location: anotherDirectory/anotherFile.php");
-////                        break;
-////                    case 4:
-////                        echo "4";
-////                        break;
-//                    default:
-//                        echo "error!";
-//                }        
-//            } 
-                ?>
-
-<!--
-            <form action="" method="POST">
-                <button name="prepagebutton" class="button right">Start!</button>
+                <div style="padding: 10px">
+                    <p>2. It will take <b>10</b> more minutes to finished this study. Enter the number below. </p>
+                    How many minutes will it take to finish this study?<br/>
+                    <input id="atten3" name="atten3" size="2" type="text" />
+                </div>
+                <div class="bottomrow">
+                    <button id="attentionbutton" class="button right" type="submit" disabled><strong>Continue</strong></button>
+                </div>
             </form>
--->
-
-
-
-                <button id="prepagebutton" class="button right"><strong>Start!</strong></button>
-<!--                <button class="button right" onclick="location.href = './uipages/ui1AllOff.php'";><strong>Start!</strong></button>-->
-            </div>
-            
         </div>
     </div>
 

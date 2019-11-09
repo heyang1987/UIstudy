@@ -94,7 +94,7 @@ function closeLeftDropdown() {
 
 setTimeout(function(){
     document.getElementById('continue').style.visibility = "visible";
-},1000);
+},25000);
 
 //$(document).ready(function(){
 //    $('#uifinishedbutton').click(function() {

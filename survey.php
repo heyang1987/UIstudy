@@ -195,7 +195,7 @@
         </table>
         <hr>
         <table>
-            <tr><td colspan="5" style="text-align:left;pointer-events: none;"><b>The system gives me more control over my household IoT devices.</b></td></tr>
+            <tr><td colspan="5" style="text-align:left;pointer-events: none;"><b>The system gives me more control over my Smart homedevices.</b></td></tr>
             <tr>
             <td onclick='boldage(this)'><label for='useful31'><input type='radio' id='useful31' name='useful3' value='-2' /><br/> Strongly Disagree </label></td>  
             <td onclick='boldage(this)'><label for='useful32'><input type='radio' id='useful32' name='useful3' value='-1' /> <br/> Disagree </label>  </td>
@@ -476,7 +476,7 @@
         </table>
         <hr>
         <table>
-            <tr><td colspan="5" style="text-align:left;pointer-events: none;"><b>I am comfortable with amount of data that is used/shared by IoT system based on my settings.</b></td></tr>
+            <tr><td colspan="5" style="text-align:left;pointer-events: none;"><b>I am comfortable with amount of data that is used/shared by smart homesystem based on my settings.</b></td></tr>
             <tr>
             <td onclick='boldage(this)'><label for='threat21'><input type='radio' id='threat21' name='threat2' value='-2' /><br/> Strongly Disagree </label></td>  
             <td onclick='boldage(this)'><label for='threat22'><input type='radio' id='threat22' name='threat2' value='-1' /> <br/> Disagree </label>  </td>

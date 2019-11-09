@@ -29,12 +29,12 @@
         
         <div id="profileSelect" style="display: block">
             <div class="title">
-                <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
+                <div style="text-align: center;margin-top:16px;">Smart home Settings</div>
             </div>
             
             <div class="settings">
-                <div class="uifixtext">
-                    <p>Please read the description of the following privacy-setting profiles and select <b>one</b> profile that matches your privacy preference as much as possible. You can change individual settings in the profile on the next screen.</p>
+                <div class="uifixtext" style="margin-top:10px">
+                    Please read the description of the following setting profiles and select <b>one</b> profile that matches your preferences as much as possible.
                 </div>
                 
                 <div class="inputGroup">
@@ -46,7 +46,7 @@
                 <div class="inputGroup">
                     <input id="profile2" name="radio" type="radio"/>
                     <label for="profile2" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('NSintroui').style.display='block';currentMenu='NSse'"><b>No Sharing</b>
-                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, and stored without restrictions but disable third party sharing.</div></label>
+                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, and stored locally and remotely without restrictions but disable third party sharing.</div></label>
                 </div>
 				<br/>
                 <div class="inputGroup">
@@ -83,7 +83,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('EAintroui').style.display='none';document.getElementById('EAdusgui').style.display='block';currentMenu='EAse'>
@@ -1156,16 +1156,16 @@
                 </div>
 
                 <div class="inputGroup">
-                    <input id="radio1" name="radioEA" type="radio"/>
-                    <label for="radio1">Local Only</label>
+                    <input id="radioEA1" name="radioEA" type="radio"/>
+                    <label for="radioEA1">Local Only</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio2" name="radioEA" type="radio"/>
-                    <label for="radio2">Local+Remote Server</label>
+                    <input id="radioEA2" name="radioEA" type="radio"/>
+                    <label for="radioEA2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radioEA" type="radio" checked/>
-                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
+                    <input id="radioEA3" name="radioEA" type="radio" checked/>
+                    <label for="radioEA3">Local+Remote Server+Third Party Sharing</label>
                 </div>
                 
                 <div class="uifixtext">
@@ -1202,7 +1202,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NSintroui').style.display='none';document.getElementById('NSdusgui').style.display='block';currentMenu='NSse'>
@@ -2275,16 +2275,16 @@
                 </div>
 
                 <div class="inputGroup">
-                    <input id="radio1" name="radioNS" type="radio"/>
-                    <label for="radio1">Local Only</label>
+                    <input id="radioNS1" name="radioNS" type="radio"/>
+                    <label for="radioNS1">Local Only</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio2" name="radioNS" type="radio" checked/>
-                    <label for="radio2">Local+Remote Server</label>
+                    <input id="radioNS2" name="radioNS" type="radio" checked/>
+                    <label for="radioNS2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radioNS" type="radio"/>
-                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
+                    <input id="radioNS3" name="radioNS" type="radio"/>
+                    <label for="radioNS3">Local+Remote Server+Third Party Sharing</label>
                 </div>
                 
                 <div class="uifixtext">
@@ -2321,7 +2321,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('LSintroui').style.display='none';document.getElementById('LSdusgui').style.display='block';currentMenu='LSse'>
@@ -3394,16 +3394,16 @@
                 </div>
 
                 <div class="inputGroup">
-                    <input id="radio1" name="radioLS" type="radio" checked/>
-                    <label for="radio1">Local Only</label>
+                    <input id="radioLS1" name="radioLS" type="radio" checked/>
+                    <label for="radioLS1">Local Only</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio2" name="radioLS" type="radio"/>
-                    <label for="radio2">Local+Remote Server</label>
+                    <input id="radioLS2" name="radioLS" type="radio"/>
+                    <label for="radioLS2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radioLS" type="radio"/>
-                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
+                    <input id="radioLS3" name="radioLS" type="radio"/>
+                    <label for="radioLS3">Local+Remote Server+Third Party Sharing</label>
                 </div>
                 
                 <div class="uifixtext">
@@ -3440,7 +3440,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NTintroui').style.display='none';document.getElementById('NTdusgui').style.display='block';currentMenu='NTse'>
@@ -4513,16 +4513,16 @@
                 </div>
 
                 <div class="inputGroup">
-                    <input id="radio1" name="radioNT" type="radio"/>
-                    <label for="radio1">Local Only</label>
+                    <input id="radioNT1" name="radioNT" type="radio"/>
+                    <label for="radioNT1">Local Only</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio2" name="radioNT" type="radio"/>
-                    <label for="radio2">Local+Remote Server</label>
+                    <input id="radioNT2" name="radioNT" type="radio"/>
+                    <label for="radioNT2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radioNT" type="radio" checked/>
-                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
+                    <input id="radioNT3" name="radioNT" type="radio" checked/>
+                    <label for="radioNT3">Local+Remote Server+Third Party Sharing</label>
                 </div>
                 
                 <div class="uifixtext">
@@ -4559,7 +4559,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DAintroui').style.display='none';document.getElementById('DAdusgui').style.display='block';currentMenu='DAse'>
@@ -5632,16 +5632,16 @@
                 </div>
 
                 <div class="inputGroup">
-                    <input id="radio1" name="radioDA" type="radio" checked/>
-                    <label for="radio1">Local Only</label>
+                    <input id="radioDA1" name="radioDA" type="radio" checked/>
+                    <label for="radioDA1">Local Only</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio2" name="radioDA" type="radio"/>
-                    <label for="radio2">Local+Remote Server</label>
+                    <input id="radioDA2" name="radioDA" type="radio"/>
+                    <label for="radioDA2">Local+Remote Server</label>
                 </div>
                 <div class="inputGroup">
-                    <input id="radio3" name="radioDA" type="radio"/>
-                    <label for="radio3">Local+Remote Server+Third Party Sharing</label>
+                    <input id="radioDA3" name="radioDA" type="radio"/>
+                    <label for="radioDA3">Local+Remote Server+Third Party Sharing</label>
                 </div>
                 
                 <div class="uifixtext">
@@ -5675,7 +5675,7 @@
     </div>
     <div id="warningDialog" class="rightDiv" style="display: none">
         <strong>Do you really want to continue?</strong>
-        <p>Make sure you clicked on every privacy-setting tab and made changes according to your preferences. Otherwise, you will fail the manual check and will not get your payment.</p>
+        <p>Make sure you clicked on every setting tab and made changes according to your preferences. Otherwise, you will fail the manual check and will not get your payment.</p>
         <button id="gotosurveybutton" class="button uiFinishButton" onclick="window.onbeforeunload = null;document.location.href = '../survey.php'">Continue</button>
     </div>
         

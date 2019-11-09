@@ -66,7 +66,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('LSintroui').style.display='none';document.getElementById('LSdusgui').style.display='block';currentMenu='LSse'>
@@ -1168,7 +1168,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('RMintroui').style.display='none';document.getElementById('RMdusgui').style.display='block';currentMenu='RMse'>
@@ -2270,7 +2270,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('TPintroui').style.display='none';document.getElementById('TPdusgui').style.display='block';currentMenu='TPse'>

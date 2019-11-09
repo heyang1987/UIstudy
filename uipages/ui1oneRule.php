@@ -29,7 +29,7 @@
 
         <div id="introui">
             <div class="title">
-                <div style="text-align: center;margin-top:16px;">Household IoT Privacy Settings</div>
+                <div style="text-align: center;margin-top:16px;">Smart home Settings</div>
             </div>
 
             <div class="settings">            
@@ -37,7 +37,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('introui').style.display='none';document.getElementById('dusgui').style.display='block';currentMenu='se'>
@@ -60,12 +60,6 @@
                     Choose <b>one</b> storage plan from below to control where to store the information collected and the extent of sharing by different devices in your smart home.
                 </div>
 
-<!--
-                <div class="inputGroup">
-                    <input id="radio1" name="radio" type="radio" checked/>
-                    <label for="radio1">No Storage</label>
-                </div>
--->
                 <div class="inputGroup">
                     <input id="radio1" name="radio" type="radio" checked/>
                     <label for="radio1">Local Only</label>

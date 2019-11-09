@@ -1109,12 +1109,6 @@
                     Choose <b>one</b> storage plan from below to control where to store the information collected and the extent of sharing by different devices in your smart home.
                 </div>
 
-<!--
-                <div class="inputGroup">
-                    <input id="radio1" name="radio" type="radio" checked/>
-                    <label for="radio1">No Storage</label>
-                </div>
--->
                 <div class="inputGroup">
                     <input id="radio1" name="radio" type="radio" checked/>
                     <label for="radio1">Local Only</label>

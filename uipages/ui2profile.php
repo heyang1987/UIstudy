@@ -34,7 +34,7 @@
             
             <div class="settings">
                 <div class="uifixtext">
-                    <p>Please read the description of the following privacy-setting profiles and select <b>one</b> profile that matches your privacy preference as much as possible. You can change individual settings in the profile on the next screen.</p>
+                    <p>Please read the description of the following privacy-setting profiles and select <b>one</b> profile that matches your privacy preference as much as possible.</p>
                 </div>
                 
                 <div class="inputGroup">
@@ -46,7 +46,7 @@
                 <div class="inputGroup">
                     <input id="profile2" name="radio" type="radio"/>
                     <label for="profile2" onclick="document.getElementById('profileSelect').style.display='none';document.getElementById('NSstoragesharing').style.display='block';currentMenu='NSse'"><b>No Sharing</b>
-                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, and stored without restrictions but disable third party sharing.</div></label>
+                    <div style="position:relative;left:10px;width:270px;font-size:12px">Allow data to be collected, used, and stored locally and remotely without restrictions but disable third party sharing.</div></label>
                 </div>
 				<br/>
                 <div class="inputGroup">
@@ -114,7 +114,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('EALSintroui').style.display='none';document.getElementById('EALSdusgui').style.display='block';currentMenu='EALSse'>
@@ -1216,7 +1216,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('EARMintroui').style.display='none';document.getElementById('EARMdusgui').style.display='block';currentMenu='EARMse'>
@@ -2318,7 +2318,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('EATPintroui').style.display='none';document.getElementById('EATPdusgui').style.display='block';currentMenu='EATPse'>
@@ -3449,7 +3449,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NSLSintroui').style.display='none';document.getElementById('NSLSdusgui').style.display='block';currentMenu='NSLSse'>
@@ -4551,7 +4551,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NSRMintroui').style.display='none';document.getElementById('NSRMdusgui').style.display='block';currentMenu='NSRMse'>
@@ -5654,7 +5654,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NSTPintroui').style.display='none';document.getElementById('NSTPdusgui').style.display='block';currentMenu='NSTPse'>
@@ -6785,7 +6785,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('LSLSintroui').style.display='none';document.getElementById('LSLSdusgui').style.display='block';currentMenu='LSLSse'>
@@ -7886,7 +7886,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('LSRMintroui').style.display='none';document.getElementById('LSRMdusgui').style.display='block';currentMenu='LSRMse'>
@@ -8987,7 +8987,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('LSTPintroui').style.display='none';document.getElementById('LSTPdusgui').style.display='block';currentMenu='LSTPse'>
@@ -10118,7 +10118,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NTLSintroui').style.display='none';document.getElementById('NTLSdusgui').style.display='block';currentMenu='NTLSse'>
@@ -11220,7 +11220,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NTRMintroui').style.display='none';document.getElementById('NTRMdusgui').style.display='block';currentMenu='NTRMse'>
@@ -12321,7 +12321,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('NTTPintroui').style.display='none';document.getElementById('NTTPdusgui').style.display='block';currentMenu='NTTPse'>
@@ -13452,7 +13452,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DALSintroui').style.display='none';document.getElementById('DALSdusgui').style.display='block';currentMenu='DALSse'>
@@ -14554,7 +14554,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DARMintroui').style.display='none';document.getElementById('DARMdusgui').style.display='block';currentMenu='DARMse'>
@@ -15655,7 +15655,7 @@
                     <strong>Device and Sensor Management</strong><img src="../images/arrowright.png" style="height:20px;float:right;">
                 </div>
                 <div class="uifixtext" style="margin-top: 10px;">
-                    Manage IoT device access to the data collected by other IoT devices in your home.
+                    Manage smart homedevice access to the data collected by other smart homedevices in your home.
                 </div>
 
                 <div class="menu" style="margin-top: 30px;" onclick=document.getElementById('DATPintroui').style.display='none';document.getElementById('DATPdusgui').style.display='block';currentMenu='DATPse'>
